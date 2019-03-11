@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 interface Props {
 }
@@ -6,7 +6,7 @@ interface Props {
 export default class NetlifyWidget extends React.Component<Props> {
   render() {
     return (
-      <div>Hello world!</div>
+      <div>This is going to be the Netlify plugin!</div>
     )
   }
 }

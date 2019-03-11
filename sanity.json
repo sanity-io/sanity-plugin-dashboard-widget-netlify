@@ -1,5 +1,9 @@
 {
-  "name": "part:@sanity/dashboard/widget/netlify",
-  "implements": "part:@sanity/dashboard/widget",
-  "path": "dist/sanity-plugin-dashboard-widget-netlify"
+  "parts": [
+    {
+      "name": "part:@sanity/dashboard/widget/netlify",
+      "implements": "part:@sanity/dashboard/widget",
+      "path": "dist/lib/index.js"
+    }
+  ]
 }
