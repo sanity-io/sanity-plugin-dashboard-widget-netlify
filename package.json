@@ -1,7 +1,7 @@
 {
   "name": "sanity-plugin-dashboard-widget-netlify",
   "version": "0.0.0",
-  "description": "",
+  "description": "Sanity Studio Dashboard Widget for showing and controlling Netlify deployments",
   "keywords": [],
   "main": "dist/sanity-plugin-dashboard-widget-netlify.umd.js",
   "module": "dist/sanity-plugin-dashboard-widget-netlify.es5.js",
@@ -18,10 +18,18 @@
   "engines": {
     "node": ">=6.0.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/issues"
+  },
+  "homepage": "https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify#readme",
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "watch": "tsc --watch --module commonjs",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
