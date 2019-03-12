@@ -3,6 +3,7 @@
     "jsx": "react", 
     "moduleResolution": "node",
     "target": "es5",
+    "esModuleInterop": true,
     "module":"es2015",
     "lib": ["es2015", "es2016", "es2017", "dom"],
     "strict": true,
@@ -18,6 +19,6 @@
     ]
   },
   "include": [
-    "src"
+    "src/**/*"
   ]
 }

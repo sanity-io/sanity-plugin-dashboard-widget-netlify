@@ -1,0 +1,14 @@
+@import 'part:@sanity/base/theme/variables-style';
+
+.container {
+  composes: container from 'part:@sanity/dashboard/widget-styles';
+  background: #ccc;
+}
+
+.header {
+  composes: header from "part:@sanity/dashboard/widget-styles";
+}
+
+.title {
+  composes: title from 'part:@sanity/dashboard/widget-styles';
+}
