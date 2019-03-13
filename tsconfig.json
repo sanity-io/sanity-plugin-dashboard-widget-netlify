@@ -16,7 +16,12 @@
     "outDir": "dist/lib",
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "part:@sanity/components/loading/spinner": ["./node_modules/@sanity/components/lib/loading/Spinner.js"],
+      "part:@sanity/components/buttons/default": ["./node_modules/@sanity/components/lib/buttons/Default.js"]
+    }
   },
   "include": [
     "src/**/*"

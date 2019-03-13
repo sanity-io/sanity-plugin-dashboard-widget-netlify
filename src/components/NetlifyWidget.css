@@ -2,7 +2,6 @@
 
 .container {
   composes: container from 'part:@sanity/dashboard/widget-styles';
-  background: #ccc;
 }
 
 .header {
@@ -11,4 +10,16 @@
 
 .title {
   composes: title from 'part:@sanity/dashboard/widget-styles';
+}
+
+.sites {
+  composes: header from "part:@sanity/dashboard/widget-styles";
+}
+
+.site {
+  composes: header from "part:@sanity/dashboard/widget-styles";
+}
+
+.buttonContainer {
+  composes: bottomButtonContainer from 'part:@sanity/dashboard/widget-styles';
 }

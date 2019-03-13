@@ -49,7 +49,7 @@ export default {
     sourceMaps(),
     // Compile post-css
     postcss({
-      writeDefinitions: true,
+      writeDefinitions: true
     })
   ]
 }

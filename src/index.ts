@@ -1,7 +1,7 @@
-import NetlifyWidget from './NetlifyWidget'
+import Widget from './widget'
 
 export default {
   name: 'netlify',
-  component: NetlifyWidget,
-  layout: {width: 'medium'}
+  component: Widget,
+  layout: { width: 'medium' }
 }

@@ -33,7 +33,7 @@
     "watch-css": "postcss src/**/*.css --base src --dir dist/lib --watch",
     "watch-rollup": "rollup -c rollup.config.ts -w",
     "postcss:build": "postcss src/**/*.css --base src --dir dist/lib",
-    "watch": "run-p watch-*",
+    "watch": "rollup -c rollup.config.ts && run-p watch-*",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
@@ -93,11 +93,15 @@
     ]
   },
   "peerDependencies": {
+    "@sanity/base": ">= 0.135.0",
+    "@sanity/components": ">= 0.135.0",
     "react": "^16.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
+    "@sanity/base": "^0.140.9",
+    "@sanity/components": "^0.140.9",
     "@types/jest": "^23.3.2",
     "@types/node": "^10.11.0",
     "@types/react": "^16.8.7",
@@ -138,5 +142,9 @@
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.12.0",
     "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "abort-controller": "^2.0.3",
+    "react-props-stream": "^1.0.0"
   }
 }
