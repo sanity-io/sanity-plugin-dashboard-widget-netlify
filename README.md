@@ -35,12 +35,12 @@ To get dashboard support in Sanity Studio in general:
             {
               name: 'Sanity Studio',
               siteId: 'xxxxx-yyyy-zzzz-xxxx-yyyyyyyy',
-              deployHookId: 'xxxyyyxxxyyyyxxxyyy',
+              buildHookId: 'xxxyyyxxxyyyyxxxyyy',
             },
             {
               name: 'Website',
               siteId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
-              deployHookId: 'yyyyxxxxxyyyxxdxxx',
+              buildHookId: 'yyyyxxxxxyyyxxdxxx',
             }
           ]
         }
@@ -51,11 +51,11 @@ To get dashboard support in Sanity Studio in general:
 ### Widget options
 `title` - Override the widget default title
 
-`sites[]` - Your Netlify sites
+`sites[]` - Your Netlify sites to show deploys for
   - `siteId`- The Netfliy API id of your site
-  - `deployHookId` - The id of some deploy hook you have created for you site within the Netlify administration panel.
+  - `buildHookId` - The id of a build hook you have created for your site within the Netlify administration panel (see *Settings > Continous Deployment*).
   - `name` - Override the site name from Netlify API
-  
+
 ## Developing on this module
 
 To simulate using your development version as a real module inside a studio, you can do the following:

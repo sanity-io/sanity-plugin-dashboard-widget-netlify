@@ -77,7 +77,7 @@ export default class SiteItem extends React.Component<Props> {
               </div>
             </div>
 
-            {site.deployHookId && (
+            {site.buildHookId && (
               <div className={styles.actions}>
                 <DefaultButton onClick={this.handleDeployButtonClicked}>
                   Deploy

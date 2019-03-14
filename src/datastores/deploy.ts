@@ -9,10 +9,10 @@ interface Deployment {
 }
 
 export function deploy(site: Site) {
-  if (!site.deployHookId) {
-    return of(new Error('Site missing deployHookId'))
+  if (!site.buildHookId) {
+    return of(new Error('Site missing buildHookId'))
   }
-  return statusCodeRequest(`https://api.netlify.com/build_hooks/${site.deployHookId}`, {
+  return statusCodeRequest(`https://api.netlify.com/build_hooks/${site.buildHookId}`, {
     method: 'POST'
   }).pipe(map(result => ({ result, site })))
 }

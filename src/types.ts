@@ -1,7 +1,7 @@
 export interface SiteWidgetOption {
   siteId: string
   name?: string
-  deployHookId?: string
+  buildHookId?: string
 }
 export interface WidgetOptions {
   title?: string
@@ -32,7 +32,7 @@ export interface SiteAPIData {
 export interface Site {
   id: string
   name: string
-  deployHookId?: string
+  buildHookId?: string
   data?: SiteAPIData
   error?: Error
   isDeploying?: boolean

@@ -45,9 +45,9 @@ export const props$ = (options: WidgetOptions) => {
           if (siteOptions && siteOptions.name) {
             site.name = siteOptions.name
           }
-          // Set deployHookId from options if present
-          if (siteOptions && siteOptions.deployHookId) {
-            site.deployHookId = siteOptions.deployHookId
+          // Set buildHookId from options if present
+          if (siteOptions && siteOptions.buildHookId) {
+            site.buildHookId = siteOptions.buildHookId
           }
           return site
         })
