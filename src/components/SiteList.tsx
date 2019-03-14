@@ -13,8 +13,8 @@ export default class SiteList extends React.Component<Props> {
     const { onDeploy, sites } = this.props
     if (!sites || (sites && sites.length === 0)) {
       return (
-        <div className={styles.containerWithPadding}>
-          No sites are defined in widget options. Please check your config.
+        <div className={styles.error}>
+          No sites are defined in the widget options. Please check your config.
         </div>
       )
     }

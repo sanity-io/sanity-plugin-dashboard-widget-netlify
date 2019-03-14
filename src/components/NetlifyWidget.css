@@ -12,6 +12,11 @@
   composes: title from 'part:@sanity/dashboard/widget-styles';
 }
 
+.error {
+  color: var(--state-danger-color);
+  padding: var(--medium-padding);
+}
+
 .sites {
   list-style: none;
   margin: 0;

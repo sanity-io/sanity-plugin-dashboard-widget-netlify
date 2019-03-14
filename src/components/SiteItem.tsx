@@ -48,7 +48,7 @@ export default class SiteItem extends React.Component<Props> {
         <li className={styles.root}>
           <div className={styles.status}>
             <h4 className={styles.title}>{site.name}</h4>
-            <p>{site.error.message}</p>
+            <p className={styles.error}>{site.error.message}</p>
             <p>
               Please check your widget options, invalid <code>siteId</code>?
             </p>
