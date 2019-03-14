@@ -1,7 +1,61 @@
 # Sanity Dashboard Widget: Netlify
 
+## Installing
 
-### Developing
+### Install the dashboard plugin
+To get dashboard support in Sanity Studio in general:
+
+`sanity install @sanity/dashboard`
+
+### Install the Netlify widget plugin
+
+`sanity install dashboard-widget-netlify`
+
+## Configuring
+
+1. Implement your own dashboardConfig. In your `sanity.json` file, append the following line to the `parts` array:
+
+```json
+{
+  "implements": "part:@sanity/dashboard/config",
+  "path": "src/dashboardConfig.js"
+}
+```
+
+2. Create the file `src/dashboardConfig.js` and make sure it inlcudes the `netlify` config like this:
+
+```js
+export default {
+  widgets: [
+      {
+      name: 'netlify',
+      options: {
+        title: 'My Netlify deploys',
+        sites: [
+          {
+            name: 'Sanity Studio'
+            siteId: 'xxxxx-yyyy-zzzz-xxxx-yyyyyyyy',
+            deployHookId: 'xxxyyyxxxyyyyxxxyyy',
+          },
+          {
+            name: 'Website'
+            siteId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
+            deployHookId: 'yyyyxxxxxyyyxxdxxx',
+          }
+        ]
+      }
+    }  
+  ]
+}
+```
+### Widget options
+`title` - Override the widget main title
+`sites[]` - Your Netlify sites
+  - `siteId`- The Netfliy API id of your site
+  - `deployHookId` - The id of some deploy hook you have created for you site within the Netlify administration panel.
+  - `name` - Optional name (or name from Netlify API is used)
+  
+## Developing on this module
 
 To simulate using your development version as a real module inside a studio, you can do the following:
 
