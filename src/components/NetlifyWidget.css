@@ -4,10 +4,6 @@
   composes: container from 'part:@sanity/dashboard/widget-styles';
 }
 
-.containerWithPadding {
-  composes: containerWithPadding from 'part:@sanity/dashboard/widget-styles';
-}
-
 .header {
   composes: header from "part:@sanity/dashboard/widget-styles";
 }
@@ -17,13 +13,13 @@
 }
 
 .sites {
-  composes: listContainer from 'part:@sanity/dashboard/widget-styles';
-}
-
-.site {
-  composes: containerWithPadding from 'part:@sanity/dashboard/widget-styles';
+  list-style: none;
+  margin: 0;
+  padding: var(--small-padding) 0;
+  border-top: 1px solid var(--hairline-color);
 }
 
 .buttonContainer {
   composes: bottomButtonContainer from 'part:@sanity/dashboard/widget-styles';
+  border-top: 1px solid var(--hairline-color);
 }

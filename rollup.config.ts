@@ -5,8 +5,8 @@ import camelCase from 'lodash.camelcase'
 import typescript from 'rollup-plugin-typescript2'
 import json from 'rollup-plugin-json'
 import postcss from 'rollup-plugin-postcss-modules'
-import fs from 'fs'
-import glob from 'glob'
+import * as fs from 'fs'
+import * as glob from 'glob'
 
 const pkg = require('./package.json')
 
@@ -18,15 +18,23 @@ glob.sync('src/**/*.css').forEach(css => {
   // Use forEach because https://github.com/rollup/rollup/issues/1873
   const definition = `${css}.d.ts`
   if (!fs.existsSync(definition)) {
-    fs.writeFileSync(definition, 'declare const mod: { [cls: string]: string }\nexport default mod\n')
+    fs.writeFileSync(
+      definition,
+      'declare const mod: { [cls: string]: string }\nexport default mod\n'
+    )
   }
 })
 
 export default {
   input: `src/index.ts`,
   output: [
-    { file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true },
-    { file: pkg.module, format: 'es', sourcemap: true },
+    {
+      file: pkg.main,
+      name: camelCase(libraryName),
+      format: 'umd',
+      sourcemap: true
+    },
+    { file: pkg.module, format: 'es', sourcemap: true }
   ],
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
   external: [],

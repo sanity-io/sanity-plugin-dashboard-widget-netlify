@@ -1,12 +1,13 @@
 import React from 'react'
 import DefaultButton from 'part:@sanity/components/buttons/default'
-import styles from './NetlifyWidget.css'
+import styles from './SiteItem.css'
 import { DeployAction, Site } from '../types'
 
 interface Props {
   site: Site
   onDeploy: DeployAction
 }
+
 export default class SiteItem extends React.Component<Props> {
   private badge = React.createRef<HTMLImageElement>()
   private imgInterval?: any
@@ -44,28 +45,46 @@ export default class SiteItem extends React.Component<Props> {
     const { site } = this.props
     if (site.error) {
       return (
-        <li className={styles.site}>
-          <h4>{site.name}</h4>
-          <p>{site.error.message}</p>
-          <p>
-            Please check your widget options, invalid <code>siteId</code>?
-          </p>
+        <li className={styles.root}>
+          <div className={styles.status}>
+            <h4 className={styles.title}>{site.name}</h4>
+            <p>{site.error.message}</p>
+            <p>
+              Please check your widget options, invalid <code>siteId</code>?
+            </p>
+          </div>
         </li>
       )
     }
     return (
-      <li className={styles.site}>
-        <h4>{site.name}</h4>
-        { /* Gives broken png! */}
-        {/* site.data && site.data.screenshot_url && <img src={site.data.screenshot_url} /> */}
-        <div>
-          <img src={this.getImageUrl()} ref={this.badge} />
-        </div>
+      <li className={styles.root}>
+        {!site.data && <div>Loading...</div>}
+        {site.data && (
+          <>
+            <div className={styles.screenshot}>
+              {/* Gives broken png! */}
+              {site.data.screenshot_url && (
+                <img src={site.data.screenshot_url} />
+              )}
+            </div>
+            <div className={styles.status}>
+              <h4 className={styles.title}>
+                {site.name} (<a href={site.data.url}>view</a>,{' '}
+                <a href={site.data.admin_url}>admin</a>)
+              </h4>
+              <div>
+                <img src={this.getImageUrl()} ref={this.badge} />
+              </div>
+            </div>
 
-        {site.deployHookId && (
-          <div>
-            <DefaultButton onClick={this.handleDeployButtonClicked}>Deploy</DefaultButton>
-          </div>
+            {site.deployHookId && (
+              <div className={styles.actions}>
+                <DefaultButton onClick={this.handleDeployButtonClicked}>
+                  Deploy
+                </DefaultButton>
+              </div>
+            )}
+          </>
         )}
       </li>
     )

@@ -21,7 +21,9 @@ export default class SiteList extends React.Component<Props> {
     return (
       <ul className={styles.sites}>
         {sites.map((site, index) => {
-          return <SiteItem onDeploy={onDeploy} site={site} key={`site-${index}`} />
+          return (
+            <SiteItem onDeploy={onDeploy} site={site} key={`site-${index}`} />
+          )
         })}
       </ul>
     )

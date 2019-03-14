@@ -9,7 +9,12 @@ describe('SanityPluginDashboardWidgetNetlify test', () => {
 
   it('NetlifyWidget is instantiable', () => {
     expect(
-      new NetlifyWidget({ title: 'Deployz', sites: [], isLoading: false, onDeploy: () => void 0 })
+      new NetlifyWidget({
+        title: 'Deployz',
+        sites: [],
+        isLoading: false,
+        onDeploy: () => void 0
+      })
     ).toBeInstanceOf(NetlifyWidget)
   })
 })
