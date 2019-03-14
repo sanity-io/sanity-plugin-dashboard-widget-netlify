@@ -33,12 +33,12 @@ export default {
         title: 'My Netlify deploys',
         sites: [
           {
-            name: 'Sanity Studio'
+            name: 'Sanity Studio',
             siteId: 'xxxxx-yyyy-zzzz-xxxx-yyyyyyyy',
             deployHookId: 'xxxyyyxxxyyyyxxxyyy',
           },
           {
-            name: 'Website'
+            name: 'Website',
             siteId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
             deployHookId: 'yyyyxxxxxyyyxxdxxx',
           }
