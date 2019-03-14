@@ -11,7 +11,7 @@ export default class NetlifyWidget extends React.Component<Props> {
       return <Spinner center message="Loading sites…" />
     }
     return (
-      <div className={styles.container}>
+      <div className={styles.containerWithPadding}>
         <header className={styles.header}>
           <h2 className={styles.title}>{title}</h2>
         </header>

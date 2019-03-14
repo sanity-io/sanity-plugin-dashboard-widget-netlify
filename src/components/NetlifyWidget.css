@@ -4,6 +4,10 @@
   composes: container from 'part:@sanity/dashboard/widget-styles';
 }
 
+.containerWithPadding {
+  composes: containerWithPadding from 'part:@sanity/dashboard/widget-styles';
+}
+
 .header {
   composes: header from "part:@sanity/dashboard/widget-styles";
 }
@@ -13,11 +17,11 @@
 }
 
 .sites {
-  composes: header from "part:@sanity/dashboard/widget-styles";
+  composes: listContainer from 'part:@sanity/dashboard/widget-styles';
 }
 
 .site {
-  composes: header from "part:@sanity/dashboard/widget-styles";
+  composes: containerWithPadding from 'part:@sanity/dashboard/widget-styles';
 }
 
 .buttonContainer {
