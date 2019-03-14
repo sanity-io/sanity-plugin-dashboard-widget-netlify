@@ -15,45 +15,46 @@ To get dashboard support in Sanity Studio in general:
 
 1. Implement your own dashboardConfig. In your `sanity.json` file, append the following line to the `parts` array:
 
-```json
-{
-  "implements": "part:@sanity/dashboard/config",
-  "path": "src/dashboardConfig.js"
-}
-```
+  ```json
+  {
+    "implements": "part:@sanity/dashboard/config",
+    "path": "src/dashboardConfig.js"
+  }
+  ```
 
-2. Create the file `src/dashboardConfig.js` and make sure it inlcudes the `netlify` config like this:
+2. Create the file `src/dashboardConfig.js` and inlcude the `netlify` widget config like this:
 
-```js
-export default {
-  widgets: [
-      {
-      name: 'netlify',
-      options: {
-        title: 'My Netlify deploys',
-        sites: [
-          {
-            name: 'Sanity Studio',
-            siteId: 'xxxxx-yyyy-zzzz-xxxx-yyyyyyyy',
-            deployHookId: 'xxxyyyxxxyyyyxxxyyy',
-          },
-          {
-            name: 'Website',
-            siteId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
-            deployHookId: 'yyyyxxxxxyyyxxdxxx',
-          }
-        ]
+  ```js
+  export default {
+    widgets: [
+        {
+        name: 'netlify',
+        options: {
+          title: 'My Netlify deploys',
+          sites: [
+            {
+              name: 'Sanity Studio',
+              siteId: 'xxxxx-yyyy-zzzz-xxxx-yyyyyyyy',
+              deployHookId: 'xxxyyyxxxyyyyxxxyyy',
+            },
+            {
+              name: 'Website',
+              siteId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
+              deployHookId: 'yyyyxxxxxyyyxxdxxx',
+            }
+          ]
+        }
       }
-    }  
-  ]
-}
-```
+    ]
+  }
+  ```
 ### Widget options
-`title` - Override the widget main title
+`title` - Override the widget default title
+
 `sites[]` - Your Netlify sites
   - `siteId`- The Netfliy API id of your site
   - `deployHookId` - The id of some deploy hook you have created for you site within the Netlify administration panel.
-  - `name` - Optional name (or name from Netlify API is used)
+  - `name` - Override the site name from Netlify API
   
 ## Developing on this module
 
