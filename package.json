@@ -1,13 +1,20 @@
 {
   "name": "sanity-plugin-dashboard-widget-netlify",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sanity Studio Dashboard Widget for showing and controlling Netlify deployments",
-  "keywords": [],
+  "keywords": [
+    "sanity",
+    "plugin",
+    "dashboard",
+    "widget",
+    "netlify"
+  ],
   "main": "dist/sanity-plugin-dashboard-widget-netlify.umd.js",
   "module": "dist/sanity-plugin-dashboard-widget-netlify.es5.js",
   "typings": "dist/types/sanity-plugin-dashboard-widget-netlify.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "sanity.json"
   ],
   "author": "Sanity.io <hello@sanity.io>",
   "repository": {
