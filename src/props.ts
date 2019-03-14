@@ -16,7 +16,8 @@ const INITIAL_PROPS = {
 }
 
 export const props$ = (options: WidgetOptions) => {
-  const sites$ = from(options.sites.map(site => site.siteId)).pipe(
+  const oSites = options.sites || []
+  const sites$ = from(oSites.map(site => site.siteId)).pipe(
     mergeMap(fetchSite),
     toArray()
   )
@@ -39,7 +40,7 @@ export const props$ = (options: WidgetOptions) => {
     map(sites => {
       const finalSites = sites
         .map(site => {
-          const siteOptions = options.sites.find(oSite => oSite.siteId === site.id)
+          const siteOptions = oSites.find(oSite => oSite.siteId === site.id)
           // Prefer name from options if present
           if (siteOptions && siteOptions.name) {
             site.name = siteOptions.name
@@ -51,7 +52,12 @@ export const props$ = (options: WidgetOptions) => {
           return site
         })
         .filter(Boolean)
-      return { sites: finalSites, title: options.title, isLoading: false, onDeploy }
+      return {
+        sites: finalSites,
+        title: options.title || INITIAL_PROPS.title,
+        isLoading: false,
+        onDeploy
+      }
     }),
     startWith(INITIAL_PROPS)
   )

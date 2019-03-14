@@ -1,19 +1,21 @@
 import React from 'react'
 import styles from './NetlifyWidget.css'
-import {DeployAction, Site} from '../types'
+import { DeployAction, Site } from '../types'
 import SiteItem from './SiteItem'
 
 interface Props {
-  sites?: Site[],
+  sites?: Site[]
   onDeploy: DeployAction
 }
 
 export default class SiteList extends React.Component<Props> {
   render() {
-    const {onDeploy, sites} = this.props
-    if (!sites || sites && sites.length === 0) {
+    const { onDeploy, sites } = this.props
+    if (!sites || (sites && sites.length === 0)) {
       return (
-        <div className={styles.container}>No sites are defined</div>
+        <div className={styles.containerWithPadding}>
+          No sites are defined in widget options. Please check your config.
+        </div>
       )
     }
     return (
