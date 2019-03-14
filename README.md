@@ -1,5 +1,7 @@
 # Sanity Dashboard Widget: Netlify
 
+Sanity Studio Dashboard Widget for triggering Netlify builds.
+
 ## Installing
 
 ### Install the dashboard plugin
