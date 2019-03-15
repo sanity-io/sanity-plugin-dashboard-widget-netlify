@@ -9,17 +9,18 @@
   padding: var(--small-padding) var(--medium-padding);
   padding-right: 0;
 
-  @nest & img {
-    vertical-align: top;
-    width: 4em;
+  @nest & > div {
+    width: 4.85em;
     height: 3em;
-    background: #eee;
+    background-color: var(--preview-placeholder-color);
+    background-size: cover;
+    border-radius: 4px;
   }
 }
 
 .status {
   flex: 1;
-  padding: var(--small-padding) var(--medium-padding);
+  padding: var(--small-padding) var(--medium-padding) var(--small-padding) var(--small-padding);
 }
 
 .error {

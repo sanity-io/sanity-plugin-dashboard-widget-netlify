@@ -43,6 +43,7 @@ export default class SiteItem extends React.Component<Props> {
 
   render() {
     const { site } = this.props
+
     if (site.error) {
       return (
         <li className={styles.root}>
@@ -56,16 +57,20 @@ export default class SiteItem extends React.Component<Props> {
         </li>
       )
     }
+
     return (
       <li className={styles.root}>
         {!site.data && <div>Loading...</div>}
         {site.data && (
           <>
             <div className={styles.screenshot}>
-              {/* Gives broken png! */}
-              {site.data.screenshot_url && (
-                <img src={site.data.screenshot_url} />
-              )}
+              <div
+                style={
+                  site.data.screenshot_url
+                    ? { backgroundImage: `url(${site.data.screenshot_url})` }
+                    : {}
+                }
+              />
             </div>
             <div className={styles.status}>
               <h4 className={styles.title}>
@@ -76,10 +81,12 @@ export default class SiteItem extends React.Component<Props> {
                 <img src={this.getImageUrl()} ref={this.badge} />
               </div>
             </div>
-
             {site.buildHookId && (
               <div className={styles.actions}>
-                <DefaultButton onClick={this.handleDeployButtonClicked}>
+                <DefaultButton
+                  inverted
+                  onClick={this.handleDeployButtonClicked}
+                >
                   Deploy
                 </DefaultButton>
               </div>
