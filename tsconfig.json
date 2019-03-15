@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "jsx": "react", 
+    "jsx": "react",
     "moduleResolution": "node",
     "target": "es5",
     "esModuleInterop": true,
-    "module":"es2015",
+    "module": "es2015",
     "lib": ["es2015", "es2016", "es2017", "dom"],
     "strict": true,
     "sourceMap": true,
@@ -14,16 +14,25 @@
     "emitDecoratorMetadata": true,
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@types"],
     "baseUrl": ".",
     "paths": {
-      "part:@sanity/components/loading/spinner": ["./node_modules/@sanity/components/lib/loading/Spinner.js"],
-      "part:@sanity/components/buttons/default": ["./node_modules/@sanity/components/lib/buttons/Default.js"]
+      "part:@sanity/base/spinner-icon": [
+        "./test/__mocks__/styleMock.js"
+      ],
+      "part:@sanity/components/loading/spinner-style": [
+        "./test/__mocks__/styleMock.js"
+      ],
+      "part:@sanity/components/loading/spinner": [
+        "./node_modules/@sanity/components/lib/loading/Spinner.js"
+      ],
+      "part:@sanity/components/buttons/default": [
+        "./node_modules/@sanity/components/lib/buttons/DefaultButton.js"
+      ],
+      "part:@sanity/components/buttons/anchor": [
+        "./node_modules/@sanity/components/lib/buttons/AnchorButton.js"
+      ]
     }
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"]
 }
