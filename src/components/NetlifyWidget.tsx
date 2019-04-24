@@ -7,6 +7,7 @@ import SiteList from './SiteList'
 
 export default class NetlifyWidget extends React.Component<Props> {
   render() {
+    console.log(this.props)
     const netlifySitesUrl = 'https://app.netlify.com/account/sites'
     const { title, isLoading, sites, onDeploy } = this.props
     if (isLoading) {
@@ -19,7 +20,7 @@ export default class NetlifyWidget extends React.Component<Props> {
         </header>
         <SiteList onDeploy={onDeploy} sites={sites} />
 
-        <div className={styles.buttonContainer}>
+        <div className={styles.footer}>
           <AnchorButton
             disabled={isLoading}
             href={isLoading ? undefined : netlifySitesUrl}

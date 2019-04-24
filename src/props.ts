@@ -9,7 +9,7 @@ import { stateReducer$ } from './reducers'
 const noop = () => void 0
 
 const INITIAL_PROPS = {
-  title: 'Netlify deployments',
+  title: 'Netlify sites',
   sites: [],
   isLoading: true,
   onDeploy: noop

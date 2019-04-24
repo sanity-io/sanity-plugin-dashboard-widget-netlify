@@ -2,6 +2,7 @@
 
 .container {
   composes: container from 'part:@sanity/dashboard/widget-styles';
+  position: relative;
 }
 
 .header {
@@ -20,11 +21,11 @@
 .sites {
   list-style: none;
   margin: 0;
-  padding: var(--small-padding) 0;
+  padding: 0;
   border-top: 1px solid var(--hairline-color);
 }
 
-.buttonContainer {
-  composes: bottomButtonContainer from 'part:@sanity/dashboard/widget-styles';
+.footer {
+  composes: footer from 'part:@sanity/dashboard/widget-styles';
   border-top: 1px solid var(--hairline-color);
 }
