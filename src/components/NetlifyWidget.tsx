@@ -7,7 +7,7 @@ import SiteList from './SiteList'
 export default class NetlifyWidget extends React.Component<Props> {
   render() {
     const netlifySitesUrl = 'https://app.netlify.com/account/sites'
-    const { title, isLoading, sites, onDeploy } = this.props
+    const { title, description, isLoading, sites, onDeploy } = this.props
 
     return (
       <div className={styles.container}>
@@ -15,6 +15,7 @@ export default class NetlifyWidget extends React.Component<Props> {
           <h2 className={styles.title}>{title}</h2>
         </header>
         <div className={styles.content}>
+          {description && <p className={styles.description} dangerouslySetInnerHTML={{__html: description}}/>}
           <SiteList isLoading={isLoading} onDeploy={onDeploy} sites={sites} />
         </div>
         <div className={styles.footer}>

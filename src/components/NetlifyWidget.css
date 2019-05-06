@@ -4,6 +4,11 @@
   composes: container from 'part:@sanity/dashboard/widget-styles';
 }
 
+.description {
+  padding: var(--small-padding) var(--medium-padding) var(--medium-padding);
+  margin: 0;
+}
+
 .header {
   composes: header from "part:@sanity/dashboard/widget-styles";
 }

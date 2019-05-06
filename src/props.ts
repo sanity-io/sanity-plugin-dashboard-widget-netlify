@@ -55,6 +55,7 @@ export const props$ = (options: WidgetOptions) => {
       return {
         sites: finalSites,
         title: options.title || INITIAL_PROPS.title,
+        description: options.description,
         isLoading: false,
         onDeploy
       }

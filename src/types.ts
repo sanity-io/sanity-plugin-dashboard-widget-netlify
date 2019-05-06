@@ -5,6 +5,7 @@ export interface SiteWidgetOption {
 }
 export interface WidgetOptions {
   title?: string
+  description?: string
   sites: SiteWidgetOption[]
 }
 
@@ -40,6 +41,7 @@ export interface Site {
 
 export interface Props {
   title?: string
+  description?: string
   sites?: Site[]
   isLoading: boolean
   onDeploy: DeployAction
