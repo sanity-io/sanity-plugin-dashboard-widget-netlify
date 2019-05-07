@@ -7,14 +7,14 @@ export const content: string
 export const sites: string
 export const footer: string
 interface Namespace {
-  container: string
-  description: string
-  header: string
-  title: string
-  error: string
-  content: string
-  sites: string
-  footer: string
+	"container": string,
+	"description": string,
+	"header": string,
+	"title": string,
+	"error": string,
+	"content": string,
+	"sites": string,
+	"footer": string,
 }
 declare const netlifyWidget: Namespace
 export default netlifyWidget

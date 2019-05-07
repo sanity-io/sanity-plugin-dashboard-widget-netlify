@@ -16,9 +16,3 @@ export function deploy(site: Site) {
     method: 'POST'
   }).pipe(map(result => ({ result, site })))
 }
-
-export function getDeploys(site: Site) {
-  return jsonRequest<Deployment[]>(`https://api.netlify.com/api/v1/sites/${site.id}/deploys`, {
-    method: 'GET'
-  }).pipe(map(deployments => ({ deployments, site })))
-}

@@ -1,7 +1,6 @@
 import { from, merge, of } from 'rxjs'
 import { createEventHandler } from 'react-props-stream'
 import { catchError, map, startWith, switchMap, mergeMap, toArray } from 'rxjs/operators'
-import { fetchSite } from './datastores/site'
 import { deploy } from './datastores/deploy'
 import { Site, WidgetOptions } from './types'
 import { stateReducer$ } from './reducers'
@@ -16,13 +15,17 @@ const INITIAL_PROPS = {
 }
 
 export const props$ = (options: WidgetOptions) => {
-  const oSites = options.sites || []
-  const sites$ = from(oSites.map(site => site.siteId)).pipe(
-    mergeMap(fetchSite),
-    toArray()
-  )
+  const sites = (options.sites || []).map(site => ({
+    id: site.siteId,
+    name: site.name,
+    title: site.title,
+    buildHookId: site.buildHookId,
+    url: site.name && `https://${site.name}.netlify.com/`,
+    adminUrl: site.name && `https://app.netlify.com/sites/${site.name}`,
+    isDeploying: false
+  }))
   const [onDeploy$, onDeploy] = createEventHandler<Site>()
-  const setSitesAction$ = sites$.pipe(map(sites => ({ type: 'setSites', sites })))
+  const setSitesAction$ = of(sites).pipe(map(sites => ({ type: 'setSites', sites })))
   const deployAction$ = onDeploy$.pipe(map(site => ({ type: 'deploy/started', site })))
   const deployResult$ = onDeploy$.pipe(switchMap(site => deploy(site)))
   const deployCompletedAction$ = deployResult$.pipe(
@@ -36,24 +39,10 @@ export const props$ = (options: WidgetOptions) => {
     .pipe(stateReducer$)
     .subscribe()
 
-  return sites$.pipe(
+  return of(sites).pipe(
     map(sites => {
-      const finalSites = sites
-        .map(site => {
-          const siteOptions = oSites.find(oSite => oSite.siteId === site.id)
-          // Prefer name from options if present
-          if (siteOptions && siteOptions.name) {
-            site.name = siteOptions.name
-          }
-          // Set buildHookId from options if present
-          if (siteOptions && siteOptions.buildHookId) {
-            site.buildHookId = siteOptions.buildHookId
-          }
-          return site
-        })
-        .filter(Boolean)
       return {
-        sites: finalSites,
+        sites,
         title: options.title || INITIAL_PROPS.title,
         description: options.description,
         isLoading: false,
