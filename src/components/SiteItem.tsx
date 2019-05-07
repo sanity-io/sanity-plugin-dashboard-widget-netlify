@@ -41,57 +41,48 @@ export default class SiteItem extends React.Component<Props> {
     }
   }
 
+  private renderLinks() {
+    const { site } = this.props
+    if (!(site.url || site.adminUrl)) {
+      return null
+    }
+    return (
+      <>
+        {' ('}
+        {site.url && (
+          <span>
+            <a href={site.url}>view</a>
+          </span>
+        )}
+        {site.adminUrl && (
+          <span>
+            , <a href={site.adminUrl}>admin</a>
+          </span>
+        )}
+        {')'}
+      </>
+    )
+  }
+
   render() {
     const { site } = this.props
-
-    if (site.error) {
-      return (
-        <li className={styles.root}>
-          <div className={styles.status}>
-            <h4 className={styles.title}>{site.name}</h4>
-            <p className={styles.error}>{site.error.message}</p>
-            <p>
-              Please check your widget options, invalid <code>siteId</code>?
-            </p>
-          </div>
-        </li>
-      )
-    }
-
     return (
       <li className={styles.root}>
-        {!site.data && <div>Loading...</div>}
-        {site.data && (
-          <>
-            <div className={styles.screenshot}>
-              <div
-                style={
-                  site.data.screenshot_url
-                    ? { backgroundImage: `url(${site.data.screenshot_url})` }
-                    : {}
-                }
-              />
-            </div>
-            <div className={styles.status}>
-              <h4 className={styles.title}>
-                {site.name} (<a href={site.data.url}>view</a>,{' '}
-                <a href={site.data.admin_url}>admin</a>)
-              </h4>
-              <div>
-                <img src={this.getImageUrl()} ref={this.badge} />
-              </div>
-            </div>
-            {site.buildHookId && (
-              <div className={styles.actions}>
-                <DefaultButton
-                  inverted
-                  onClick={this.handleDeployButtonClicked}
-                >
-                  Deploy
-                </DefaultButton>
-              </div>
-            )}
-          </>
+        <div className={styles.status}>
+          <h4 className={styles.title}>
+            {site.title}
+            {this.renderLinks()}
+          </h4>
+          <div>
+            <img src={this.getImageUrl()} ref={this.badge} />
+          </div>
+        </div>
+        {site.buildHookId && (
+          <div className={styles.actions}>
+            <DefaultButton inverted onClick={this.handleDeployButtonClicked}>
+              Deploy
+            </DefaultButton>
+          </div>
         )}
       </li>
     )

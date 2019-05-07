@@ -23,6 +23,9 @@
       "part:@sanity/components/loading/spinner-style": [
         "./test/__mocks__/styleMock.js"
       ],
+      "part:@sanity/components/buttons/default-style": [
+        "./test/__mocks__/styleMock.js"
+      ],
       "part:@sanity/components/loading/spinner": [
         "./node_modules/@sanity/components/lib/loading/Spinner.js"
       ],

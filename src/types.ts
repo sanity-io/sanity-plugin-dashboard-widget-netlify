@@ -1,7 +1,9 @@
 export interface SiteWidgetOption {
   siteId: string
   name?: string
-  buildHookId?: string
+  title: string
+  buildHookId: string
+  hostname?: string
 }
 export interface WidgetOptions {
   title?: string
@@ -9,34 +11,14 @@ export interface WidgetOptions {
   sites: SiteWidgetOption[]
 }
 
-export interface SiteAPIData {
-  id: string
-  name: string
-  url: string
-  admin_url: string
-  deploy_id: string
-  published_deploy: {
-    id: string
-    build_id: string
-    published_at: string
-    context: string
-    public: boolean
-    deploy_time: number
-    summary: {
-      status: string
-    }
-  }
-  screenshot_url: string
-  public: boolean
-}
-
 export interface Site {
+  title: string
+  name?: string
   id: string
-  name: string
-  buildHookId?: string
-  data?: SiteAPIData
-  error?: Error
-  isDeploying?: boolean
+  url?: string
+  adminUrl?: string
+  buildHookId: string
+  isDeploying: boolean
 }
 
 export interface Props {

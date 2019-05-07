@@ -35,14 +35,16 @@ To get dashboard support in Sanity Studio in general:
           title: 'My Netlify deploys',
           sites: [
             {
-              name: 'Sanity Studio',
+              title: 'Sanity Studio',
               siteId: 'xxxxx-yyyy-zzzz-xxxx-yyyyyyyy',
               buildHookId: 'xxxyyyxxxyyyyxxxyyy',
+              name: 'sanity-gatsby-blog-20-studio',
             },
             {
-              name: 'Website',
+              title: 'Website',
               siteId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
               buildHookId: 'yyyyxxxxxyyyxxdxxx',
+              name: 'sanity-gatsby-blog-20-web'
             }
           ]
         }
