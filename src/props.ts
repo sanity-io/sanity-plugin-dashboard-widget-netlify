@@ -16,7 +16,7 @@ const INITIAL_PROPS = {
 
 export const props$ = (options: WidgetOptions) => {
   const sites = (options.sites || []).map(site => ({
-    id: site.siteId,
+    id: site.apiId,
     name: site.name,
     title: site.title,
     buildHookId: site.buildHookId,

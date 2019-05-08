@@ -1,5 +1,5 @@
 export interface SiteWidgetOption {
-  siteId: string
+  apiId: string
   name?: string
   title: string
   buildHookId: string
