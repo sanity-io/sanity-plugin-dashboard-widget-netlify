@@ -4,22 +4,9 @@
   display: flex;
 }
 
-.screenshot {
-  padding: var(--small-padding) var(--medium-padding);
-  padding-right: 0;
-
-  @nest & > div {
-    width: 4.85em;
-    height: 3em;
-    background-color: var(--preview-placeholder-color);
-    background-size: cover;
-    border-radius: 4px;
-  }
-}
-
 .status {
   flex: 1;
-  padding: var(--small-padding) var(--medium-padding) var(--small-padding) var(--small-padding);
+  padding: var(--small-padding) var(--medium-padding) var(--small-padding) var(--medium-padding);
 }
 
 .error {
