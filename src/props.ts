@@ -21,8 +21,7 @@ export const props$ = (options: WidgetOptions) => {
     title: site.title,
     buildHookId: site.buildHookId,
     url: site.name && `https://${site.name}.netlify.com/`,
-    adminUrl: site.name && `https://app.netlify.com/sites/${site.name}`,
-    isDeploying: false
+    adminUrl: site.name && `https://app.netlify.com/sites/${site.name}`
   }))
   const [onDeploy$, onDeploy] = createEventHandler<Site>()
   const setSitesAction$ = of(sites).pipe(map(sites => ({ type: 'setSites', sites })))

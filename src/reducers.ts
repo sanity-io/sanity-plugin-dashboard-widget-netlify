@@ -27,7 +27,7 @@ export const stateReducer$ = scan((state: State, action: Action) => {
         ...state,
         sites: state.sites.map((site: Site) => {
           if (action.site && site.id === action.site.id) {
-            return { ...site, isDeploying: true }
+            return { ...site }
           }
           return site
         })
@@ -42,7 +42,7 @@ export const stateReducer$ = scan((state: State, action: Action) => {
         ...state,
         sites: state.sites.map((site: Site) => {
           if (action.site && site.id === action.site.id) {
-            return { ...site, isDeploying: false, error: action.error }
+            return { ...site, error: action.error }
           }
           return site
         })
