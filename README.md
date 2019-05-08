@@ -36,13 +36,13 @@ To get dashboard support in Sanity Studio in general:
           sites: [
             {
               title: 'Sanity Studio',
-              siteId: 'xxxxx-yyyy-zzzz-xxxx-yyyyyyyy',
+              apiId: 'xxxxx-yyyy-zzzz-xxxx-yyyyyyyy',
               buildHookId: 'xxxyyyxxxyyyyxxxyyy',
               name: 'sanity-gatsby-blog-20-studio',
             },
             {
               title: 'Website',
-              siteId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
+              apiId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
               buildHookId: 'yyyyxxxxxyyyxxdxxx',
               name: 'sanity-gatsby-blog-20-web'
             }
@@ -56,9 +56,10 @@ To get dashboard support in Sanity Studio in general:
 `title` - Override the widget default title
 
 `sites[]` - Your Netlify sites to show deploys for
-  - `siteId`- The Netfliy API id of your site
+  - `apiIdId`- The Netfliy API id of your site
   - `buildHookId` - The id of a build hook you have created for your site within the Netlify administration panel (see *Settings > Continous Deployment*).
-  - `name` - Override the site name from Netlify API
+  - `title` - Override the site name with a custom title
+  - `name` - The Netlify site name
 
 ## Developing on this module
 
