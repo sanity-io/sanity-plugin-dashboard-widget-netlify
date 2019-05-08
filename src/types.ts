@@ -18,7 +18,6 @@ export interface Site {
   url?: string
   adminUrl?: string
   buildHookId: string
-  isDeploying: boolean
 }
 
 export interface Props {

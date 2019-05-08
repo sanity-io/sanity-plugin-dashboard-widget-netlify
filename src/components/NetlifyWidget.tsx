@@ -15,7 +15,9 @@ export default class NetlifyWidget extends React.Component<Props> {
           <h2 className={styles.title}>{title}</h2>
         </header>
         <div className={styles.content}>
-          {description && <p className={styles.description} dangerouslySetInnerHTML={{__html: description}}/>}
+          {description && (
+            <p className={styles.description} dangerouslySetInnerHTML={{ __html: description }} />
+          )}
           <SiteList isLoading={isLoading} onDeploy={onDeploy} sites={sites} />
         </div>
         <div className={styles.footer}>
