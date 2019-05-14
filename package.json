@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-dashboard-widget-netlify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sanity Studio Dashboard Widget for triggering Netlify builds",
   "keywords": [
     "sanity",
