@@ -44,7 +44,8 @@ To get dashboard support in Sanity Studio in general:
               title: 'Website',
               apiId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
               buildHookId: 'yyyyxxxxxyyyxxdxxx',
-              name: 'sanity-gatsby-blog-20-web'
+              name: 'sanity-gatsby-blog-20-web',
+              url: 'https://my-sanity-deployment.com',
             }
           ]
         }
@@ -60,6 +61,7 @@ To get dashboard support in Sanity Studio in general:
   - `buildHookId` - The id of a build hook you have created for your site within the Netlify administration panel (see *Settings > Continous Deployment*).
   - `title` - Override the site name with a custom title
   - `name` - The Netlify site name
+  - `url` - Optionally override site deployment url. By default it is inferred to be `https://netlify-site-name-netlify.app`.
 
 ## Developing on this module
 

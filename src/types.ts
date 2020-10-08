@@ -3,7 +3,7 @@ export interface SiteWidgetOption {
   name?: string
   title: string
   buildHookId: string
-  hostname?: string
+  url?: string
 }
 export interface WidgetOptions {
   title?: string

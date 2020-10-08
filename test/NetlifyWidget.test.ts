@@ -9,7 +9,8 @@ describe('NetlifyWidget', () => {
           {
             id: '123',
             name: 'Foobar',
-            buildHookId: 'abcd'
+            buildHookId: 'abcd',
+            title: 'Title'
           }
         ],
         isLoading: false,

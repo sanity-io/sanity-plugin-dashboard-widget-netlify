@@ -1,6 +1,6 @@
-import { from, merge, of } from 'rxjs'
+import { merge, of } from 'rxjs'
 import { createEventHandler } from 'react-props-stream'
-import { catchError, map, startWith, switchMap, mergeMap, toArray } from 'rxjs/operators'
+import { catchError, map, startWith, switchMap } from 'rxjs/operators'
 import { deploy } from './datastores/deploy'
 import { Site, WidgetOptions } from './types'
 import { stateReducer$ } from './reducers'
@@ -20,9 +20,10 @@ export const props$ = (options: WidgetOptions) => {
     name: site.name,
     title: site.title,
     buildHookId: site.buildHookId,
-    url: site.name && `https://${site.name}.netlify.com/`,
+    url: site.url || (site.name && `https://${site.name}.netlify.app/`),
     adminUrl: site.name && `https://app.netlify.com/sites/${site.name}`
   }))
+
   const [onDeploy$, onDeploy] = createEventHandler<Site>()
   const setSitesAction$ = of(sites).pipe(map(sites => ({ type: 'setSites', sites })))
   const deployAction$ = onDeploy$.pipe(map(site => ({ type: 'deploy/started', site })))
