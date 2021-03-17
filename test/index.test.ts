@@ -1,5 +1,5 @@
 import index from '../src/index'
-import Widget from '../src/Widget'
+import Widget from '../src/widget'
 
 describe('index', () => {
   it('has a name', () => {

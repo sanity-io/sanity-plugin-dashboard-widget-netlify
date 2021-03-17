@@ -1,5 +1,5 @@
 import React from 'react'
-import Widget from '../src/Widget'
+import Widget from '../src/widget'
 
 describe('Widget', () => {
   it('works', () => {
