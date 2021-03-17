@@ -9,6 +9,6 @@ describe('index', () => {
     expect(index.component).toBe(Widget)
   })
   it('has a layout', () => {
-    expect(index.layout).toEqual({ width: 'medium' })
+    expect(index.layout).toEqual({width: 'medium'})
   })
 })

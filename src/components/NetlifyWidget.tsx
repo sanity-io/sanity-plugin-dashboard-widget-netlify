@@ -1,13 +1,13 @@
 import React from 'react'
 import AnchorButton from 'part:@sanity/components/buttons/anchor'
 import styles from './NetlifyWidget.css'
-import { Props } from '../types'
+import {Props} from '../types'
 import SiteList from './SiteList'
 
 export default class NetlifyWidget extends React.Component<Props> {
   render() {
     const netlifySitesUrl = 'https://app.netlify.com/account/sites'
-    const { title, description, isLoading, sites, onDeploy } = this.props
+    const {title, description, isLoading, sites, onDeploy} = this.props
 
     return (
       <div className={styles.container}>
@@ -16,7 +16,7 @@ export default class NetlifyWidget extends React.Component<Props> {
         </header>
         <div className={styles.content}>
           {description && (
-            <p className={styles.description} dangerouslySetInnerHTML={{ __html: description }} />
+            <p className={styles.description} dangerouslySetInnerHTML={{__html: description}} />
           )}
           <SiteList isLoading={isLoading} onDeploy={onDeploy} sites={sites} />
         </div>

@@ -1,8 +1,8 @@
-import { Observable } from 'rxjs'
-import { createAbortController } from './utils/createAbortController'
+import {Observable} from 'rxjs'
+import {createAbortController} from './utils/createAbortController'
 
 export const statusCodeRequest = (input: RequestInfo, init?: RequestInit): Observable<number> => {
-  return new Observable(subscriber => {
+  return new Observable((subscriber) => {
     const controller = createAbortController()
     const onResponse = (res: number) => {
       subscriber.next(res)
@@ -16,7 +16,7 @@ export const statusCodeRequest = (input: RequestInfo, init?: RequestInit): Obser
       }
     }
 
-    fetch(input, { ...init, signal: controller.signal })
+    fetch(input, {...init, signal: controller.signal})
       .then((res: Response) => {
         if (res.status < 200 || res.status > 299) {
           throw new Error(`HTTP Error ${res.status}: ${res.statusText}`)

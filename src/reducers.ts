@@ -1,5 +1,5 @@
-import { scan } from 'rxjs/operators'
-import { Site } from './types'
+import {scan} from 'rxjs/operators'
+import {Site} from './types'
 
 interface Deployment {
   id: string
@@ -21,31 +21,31 @@ interface State {
 export const stateReducer$ = scan((state: State, action: Action) => {
   switch (action.type) {
     case 'setSites':
-      return { ...state, sites: action.sites || [] }
+      return {...state, sites: action.sites || []}
     case 'deploy/started':
       return {
         ...state,
         sites: state.sites.map((site: Site) => {
           if (action.site && site.id === action.site.id) {
-            return { ...site }
+            return {...site}
           }
           return site
-        })
+        }),
       }
     case 'deploy/failed':
       return {
         ...state,
-        error: action.error
+        error: action.error,
       }
     case 'deploy/completed':
       return {
         ...state,
         sites: state.sites.map((site: Site) => {
           if (action.site && site.id === action.site.id) {
-            return { ...site, error: action.error }
+            return {...site, error: action.error}
           }
           return site
-        })
+        }),
       }
     default:
       return state

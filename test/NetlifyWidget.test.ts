@@ -10,11 +10,11 @@ describe('NetlifyWidget', () => {
             id: '123',
             name: 'Foobar',
             buildHookId: 'abcd',
-            title: 'Title'
-          }
+            title: 'Title',
+          },
         ],
         isLoading: false,
-        onDeploy: () => void 0
+        onDeploy: () => void 0,
       })
     ).toBeInstanceOf(NetlifyWidget)
   })

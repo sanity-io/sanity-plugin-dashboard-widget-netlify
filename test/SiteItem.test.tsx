@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { act, fireEvent, render } from '@testing-library/react'
-import { advanceBy, advanceTo, clear } from 'jest-date-mock'
+import {act, fireEvent, render} from '@testing-library/react'
+import {advanceBy, advanceTo, clear} from 'jest-date-mock'
 
-import SiteItem, { IMAGE_PULL_INTERVAL } from './SiteItem'
-import { Site } from '../types'
+import SiteItem, {IMAGE_PULL_INTERVAL} from '../src/components/SiteItem'
+import {Site} from '../src/types'
 
 import '@testing-library/jest-dom'
 
@@ -18,10 +18,10 @@ describe('SiteItem', () => {
     jest.useRealTimers()
   })
 
-  const defaultSite: Site = { id: 'Id', title: 'Title', name: 'Name', buildHookId: 'BuildHookId' }
+  const defaultSite: Site = {id: 'Id', title: 'Title', name: 'Name', buildHookId: 'BuildHookId'}
 
   it('displays site title', () => {
-    const { getByText } = render(<SiteItem site={defaultSite} onDeploy={() => undefined} />)
+    const {getByText} = render(<SiteItem site={defaultSite} onDeploy={() => undefined} />)
 
     expect(getByText('Title')).toBeVisible()
   })
@@ -29,7 +29,7 @@ describe('SiteItem', () => {
   it(`refreshes badge image every ${IMAGE_PULL_INTERVAL}ms`, () => {
     jest.useFakeTimers()
 
-    const { getByAltText } = render(<SiteItem site={defaultSite} onDeploy={() => undefined} />)
+    const {getByAltText} = render(<SiteItem site={defaultSite} onDeploy={() => undefined} />)
 
     const expectedSrc = `https://api.netlify.com/api/v1/badges/Id/deploy-status?${new Date().getTime()}`
     expect(getByAltText('Badge')).toHaveAttribute('src', expectedSrc)
@@ -53,31 +53,31 @@ describe('SiteItem', () => {
   })
 
   it('displays links to preview and site admin', () => {
-    const { queryByText, getByText, rerender } = render(
+    const {queryByText, getByText, rerender} = render(
       <SiteItem site={defaultSite} onDeploy={() => undefined} />
     )
 
     expect(queryByText('view')).not.toBeInTheDocument()
     expect(queryByText('admin')).not.toBeInTheDocument()
 
-    rerender(<SiteItem site={{ ...defaultSite, url: 'Url' }} onDeploy={() => undefined} />)
+    rerender(<SiteItem site={{...defaultSite, url: 'Url'}} onDeploy={() => undefined} />)
 
     expect(getByText('(view)')).toBeVisible()
     expect(getByText('(view)')).toHaveAttribute('href', 'Url')
 
-    rerender(<SiteItem site={{ ...defaultSite, adminUrl: 'Url' }} onDeploy={() => undefined} />)
+    rerender(<SiteItem site={{...defaultSite, adminUrl: 'Url'}} onDeploy={() => undefined} />)
 
     expect(getByText('(admin)')).toBeVisible()
     expect(getByText('(admin)')).toHaveAttribute('href', 'Url')
 
     rerender(
       <SiteItem
-        site={{ ...defaultSite, adminUrl: 'AdminUrl', url: 'Url' }}
+        site={{...defaultSite, adminUrl: 'AdminUrl', url: 'Url'}}
         onDeploy={() => undefined}
       />
     )
 
-    expect(getByText((_, node) => node.textContent === '(view, admin)')).toBeVisible()
+    expect(getByText((_, node) => node?.textContent === '(view, admin)')).toBeVisible()
 
     expect(getByText('view')).toHaveAttribute('href', 'Url')
     expect(getByText('admin')).toHaveAttribute('href', 'AdminUrl')
@@ -87,7 +87,7 @@ describe('SiteItem', () => {
     jest.useFakeTimers()
     const onDeploy = jest.fn()
 
-    const { getByText, getByAltText } = render(<SiteItem site={defaultSite} onDeploy={onDeploy} />)
+    const {getByText, getByAltText} = render(<SiteItem site={defaultSite} onDeploy={onDeploy} />)
 
     expect(onDeploy).toHaveBeenCalledTimes(0)
 

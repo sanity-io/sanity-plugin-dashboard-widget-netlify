@@ -1,7 +1,7 @@
 import Spinner from 'part:@sanity/components/loading/spinner'
 import React from 'react'
 import styles from './NetlifyWidget.css'
-import { DeployAction, Site } from '../types'
+import {DeployAction, Site} from '../types'
 import SiteItem from './SiteItem'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 export default class SiteList extends React.Component<Props> {
   render() {
-    const { isLoading, onDeploy, sites } = this.props
+    const {isLoading, onDeploy, sites} = this.props
     if (isLoading) {
       return <Spinner center message="Loading sites…" />
     }
@@ -26,9 +26,7 @@ export default class SiteList extends React.Component<Props> {
     return (
       <ul className={styles.sites}>
         {sites.map((site, index) => {
-          return (
-            <SiteItem onDeploy={onDeploy} site={site} key={`site-${index}`} />
-          )
+          return <SiteItem onDeploy={onDeploy} site={site} key={`site-${index}`} />
         })}
       </ul>
     )

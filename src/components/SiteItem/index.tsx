@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useCallback, useEffect, useRef, useState } from 'react'
+import React, {FunctionComponent, useCallback, useEffect, useRef, useState} from 'react'
 
 import DefaultButton from 'part:@sanity/components/buttons/default'
 
 import styles from './SiteItem.css'
-import { DeployAction, Site } from '../../types'
+import {DeployAction, Site} from '../../types'
 import Links from './Links'
 
 interface Props {
@@ -42,9 +42,9 @@ const useDeploy = (site: Site, onDeploy: DeployAction, updateBadge: () => void) 
   }, [site, onDeploy, updateBadge])
 }
 
-const SiteItem: FunctionComponent<Props> = props => {
-  const { site, onDeploy } = props
-  const { id, title, url, adminUrl, buildHookId } = site
+const SiteItem: FunctionComponent<Props> = (props) => {
+  const {site, onDeploy} = props
+  const {id, title, url, adminUrl, buildHookId} = site
 
   const [badge, updateBadge] = useBadgeImage(id)
   const handleDeploy = useDeploy(site, onDeploy, updateBadge)

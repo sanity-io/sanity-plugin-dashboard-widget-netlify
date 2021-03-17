@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react'
+import React, {FunctionComponent} from 'react'
 
-const Link: FunctionComponent<{ url: string }> = props => {
-  const { url, children } = props
+const Link: FunctionComponent<{url: string}> = (props) => {
+  const {url, children} = props
 
   return (
     <span>
@@ -15,8 +15,8 @@ type Props = {
   adminUrl?: string
 }
 
-const Links: FunctionComponent<Props> = props => {
-  const { url, adminUrl } = props
+const Links: FunctionComponent<Props> = (props) => {
+  const {url, adminUrl} = props
 
   if (url && adminUrl) {
     return (
