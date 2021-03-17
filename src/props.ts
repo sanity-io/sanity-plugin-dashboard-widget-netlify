@@ -5,7 +5,7 @@ import {deploy} from './datastores/deploy'
 import {Site, WidgetOptions} from './types'
 import {stateReducer$} from './reducers'
 
-const noop = () => void 0
+const noop = () => undefined
 
 const INITIAL_PROPS = {
   title: 'Netlify sites',
@@ -14,8 +14,9 @@ const INITIAL_PROPS = {
   onDeploy: noop,
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const props$ = (options: WidgetOptions) => {
-  const sites = (options.sites || []).map((site) => ({
+  const configuredSites = (options.sites || []).map((site) => ({
     id: site.apiId,
     name: site.name,
     title: site.title,
@@ -25,7 +26,7 @@ export const props$ = (options: WidgetOptions) => {
   }))
 
   const [onDeploy$, onDeploy] = createEventHandler<Site>()
-  const setSitesAction$ = of(sites).pipe(map((sites) => ({type: 'setSites', sites})))
+  const setSitesAction$ = of(configuredSites).pipe(map((sites) => ({type: 'setSites', sites})))
   const deployAction$ = onDeploy$.pipe(map((site) => ({type: 'deploy/started', site})))
   const deployResult$ = onDeploy$.pipe(switchMap((site) => deploy(site)))
   const deployCompletedAction$ = deployResult$.pipe(
@@ -37,16 +38,14 @@ export const props$ = (options: WidgetOptions) => {
 
   merge(setSitesAction$, deployAction$, deployCompletedAction$).pipe(stateReducer$).subscribe()
 
-  return of(sites).pipe(
-    map((sites) => {
-      return {
-        sites,
-        title: options.title || INITIAL_PROPS.title,
-        description: options.description,
-        isLoading: false,
-        onDeploy,
-      }
-    }),
+  return of(configuredSites).pipe(
+    map((sites) => ({
+      sites,
+      title: options.title || INITIAL_PROPS.title,
+      description: options.description,
+      isLoading: false,
+      onDeploy,
+    })),
     startWith(INITIAL_PROPS)
   )
 }

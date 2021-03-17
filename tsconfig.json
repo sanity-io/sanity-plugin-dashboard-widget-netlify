@@ -27,13 +27,13 @@
         "./test/__mocks__/styleMock.js"
       ],
       "part:@sanity/components/loading/spinner": [
-        "./node_modules/@sanity/components/lib/loading/Spinner.js"
+        "test/__mocks__/Spinner.tsx"
       ],
       "part:@sanity/components/buttons/default": [
-        "./node_modules/@sanity/components/lib/buttons/DefaultButton.js"
+        "test/__mocks__/DefaultButton.tsx"
       ],
       "part:@sanity/components/buttons/anchor": [
-        "./node_modules/@sanity/components/lib/buttons/AnchorButton.js"
+        "test/__mocks__/Anchor.tsx"
       ]
     }
   },

@@ -1,5 +1,5 @@
+/// <reference types="react" />
 declare module 'part:@sanity/components/buttons/default' {
-  import * as React from 'react'
   interface Props {
     children?: any
     onClick?: any
@@ -10,7 +10,6 @@ declare module 'part:@sanity/components/buttons/default' {
 }
 
 declare module 'part:@sanity/components/buttons/anchor' {
-  import * as React from 'react'
   interface Props {
     children?: any
     disabled?: boolean
@@ -23,7 +22,6 @@ declare module 'part:@sanity/components/buttons/anchor' {
 }
 
 declare module 'part:@sanity/components/loading/spinner' {
-  import * as React from 'react'
   interface Props {
     center?: boolean
     message?: string

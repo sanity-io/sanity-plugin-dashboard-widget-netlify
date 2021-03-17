@@ -14,7 +14,7 @@ describe('NetlifyWidget', () => {
           },
         ],
         isLoading: false,
-        onDeploy: () => void 0,
+        onDeploy: () => undefined,
       })
     ).toBeInstanceOf(NetlifyWidget)
   })

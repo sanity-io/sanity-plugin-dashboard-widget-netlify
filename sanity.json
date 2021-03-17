@@ -1,13 +1,12 @@
 {
   "paths": {
     "source": "./src",
-    "compiled": "./dist/lib"
+    "compiled": "./dist"
   },
   "parts": [
     {
-      "name": "part:@sanity/dashboard/widget/netlify",
       "implements": "part:@sanity/dashboard/widget",
-      "path": "index.js"
+      "path": "index"
     }
   ]
 }
