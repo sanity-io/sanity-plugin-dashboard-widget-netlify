@@ -34,7 +34,7 @@
     "lint": "eslint .",
     "prebuild": "rimraf dist",
     "build": "sanipack build",
-    "watch": "sanipack watch",
+    "watch": "sanipack build --watch",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
