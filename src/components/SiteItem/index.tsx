@@ -42,7 +42,7 @@ const useDeploy = (site: Site, onDeploy: DeployAction, updateBadge: () => void) 
 const SiteItem: FunctionComponent<Props> = (props) => {
   const [hasBadgeError, setHasBadgeError] = useState(false)
   const {site, onDeploy} = props
-  const {id, title, url, adminUrl, buildHookId} = site
+  const {id, name, title, url, adminUrl, buildHookId} = site
 
   const [badge, updateBadge] = useBadgeImage(id)
   const handleDeploy = useDeploy(site, onDeploy, updateBadge)
@@ -55,7 +55,7 @@ const SiteItem: FunctionComponent<Props> = (props) => {
       <Box flex={1} paddingY={2} paddingX={3}>
         <Stack space={2}>
           <Text as="h4">
-            {title}
+            {title || name}
             <Links url={url} adminUrl={adminUrl} />
           </Text>
 
