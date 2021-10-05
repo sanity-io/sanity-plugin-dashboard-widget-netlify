@@ -5,7 +5,7 @@ const Link: FunctionComponent<{url: string}> = (props) => {
 
   return (
     <span>
-      <a href={url}>{children}</a>
+      <a href={url} target="_blank">{children}</a>
     </span>
   )
 }

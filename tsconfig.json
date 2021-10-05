@@ -17,23 +17,23 @@
     "typeRoots": ["node_modules/@types"],
     "baseUrl": ".",
     "paths": {
-      "part:@sanity/base/spinner-icon": [
-        "./test/__mocks__/styleMock.js"
+      "part:@sanity/dashboard/widget-container": [
+        "test/__mocks__/WidgetContainer.tsx"
       ],
-      "part:@sanity/components/loading/spinner-style": [
-        "./test/__mocks__/styleMock.js"
+      "all:part:@sanity/dashboard/widget": [
+        "test/__mocks__/undefinedObjectMock.tsx"
       ],
-      "part:@sanity/components/buttons/default-style": [
-        "./test/__mocks__/styleMock.js"
+      "part:@sanity/components/previews/default": [
+        "test/__mocks__/undefinedObjectMock.tsx"
       ],
-      "part:@sanity/components/loading/spinner": [
-        "test/__mocks__/Spinner.tsx"
+      "part:@sanity/base/user": [
+        "test/__mocks__/undefinedObjectMock.tsx"
       ],
-      "part:@sanity/components/buttons/default": [
-        "test/__mocks__/DefaultButton.tsx"
+      "part:@sanity/base/client": [
+        "test/__mocks__/undefinedObjectMock.tsx"
       ],
-      "part:@sanity/components/buttons/anchor": [
-        "test/__mocks__/Anchor.tsx"
+      "part:@sanity/dashboard/config": [
+        "test/__mocks__/undefinedObjectMock.tsx"
       ]
     }
   },
