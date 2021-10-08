@@ -1,8 +1,5 @@
 import React, {FunctionComponent, useCallback, useEffect, useRef, useState} from 'react'
-
-import DefaultButton from 'part:@sanity/components/buttons/default'
-
-import styles from './SiteItem.css'
+import {Button, Flex, Box, Card, Text, Stack, Label} from '@sanity/ui'
 import {DeployAction, Site} from '../../types'
 import Links from './Links'
 
@@ -43,33 +40,38 @@ const useDeploy = (site: Site, onDeploy: DeployAction, updateBadge: () => void) 
 }
 
 const SiteItem: FunctionComponent<Props> = (props) => {
+  const [hasBadgeError, setHasBadgeError] = useState(false)
   const {site, onDeploy} = props
-  const {id, title, url, adminUrl, buildHookId} = site
+  const {id, name, title, url, adminUrl, buildHookId} = site
 
   const [badge, updateBadge] = useBadgeImage(id)
   const handleDeploy = useDeploy(site, onDeploy, updateBadge)
+  const handleBadgeError = () => {
+    setHasBadgeError(true)
+  }
 
   return (
-    <li className={styles.root}>
-      <div className={styles.status}>
-        <h4 className={styles.title}>
-          {title}
-          <Links url={url} adminUrl={adminUrl} />
-        </h4>
+    <Flex as="li">
+      <Box flex={1} paddingY={2} paddingX={3}>
+        <Stack space={2}>
+          <Text as="h4">
+            {title || name}
+            <Links url={url} adminUrl={adminUrl} />
+          </Text>
 
-        <div>
-          <img src={badge} alt="Badge" />
-        </div>
-      </div>
+          <Flex justify="flex-start">
+            {!hasBadgeError && <img src={badge} onError={handleBadgeError} alt="Badge" />}
+            {hasBadgeError && <Card tone="critical" radius={2} padding={2}><Label size={0} muted>Failed to load badge</Label></Card>}
+          </Flex>
+        </Stack>
+      </Box>
 
       {buildHookId ? (
-        <div className={styles.actions}>
-          <DefaultButton inverted onClick={handleDeploy}>
-            Deploy
-          </DefaultButton>
-        </div>
+        <Box paddingY={2} paddingX={3}>
+          <Button mode="ghost" onClick={handleDeploy} text="Deploy" />
+        </Box>
       ) : null}
-    </li>
+    </Flex>
   )
 }
 

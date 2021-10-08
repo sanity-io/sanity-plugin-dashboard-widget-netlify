@@ -1,8 +1,7 @@
-import Spinner from 'part:@sanity/components/loading/spinner'
 import React from 'react'
-import styles from './NetlifyWidget.css'
 import {DeployAction, Site} from '../types'
 import SiteItem from './SiteItem'
+import {Flex, Box, Card, Text, Spinner, Stack} from '@sanity/ui'
 
 interface Props {
   isLoading: boolean
@@ -10,25 +9,34 @@ interface Props {
   onDeploy: DeployAction
 }
 
-export default class SiteList extends React.Component<Props> {
-  render() {
-    const {isLoading, onDeploy, sites} = this.props
-    if (isLoading) {
-      return <Spinner center message="Loading sites…" />
-    }
-    if (!sites || (sites && sites.length === 0)) {
-      return (
-        <div className={styles.error}>
-          No sites are defined in the widget options. Please check your config.
-        </div>
-      )
-    }
+export default function SiteList(props: Props) {
+  const {isLoading, onDeploy, sites} = props
+  if (isLoading) {
     return (
-      <ul className={styles.sites}>
+      <Card padding={4}>
+        <Flex direction="column" justify="center" align="center">
+          <Spinner muted />
+          <Box marginTop={3}>
+            <Text muted>Loading sites…</Text>
+          </Box>
+        </Flex>
+      </Card>
+    )
+  }
+  if (!sites || (sites && sites.length === 0)) {
+    return (
+      <Card tone="critical" padding={3}>
+        <Text>No sites are defined in the widget options. Please check your config.</Text>
+      </Card>
+    )
+  }
+  return (
+    <Box paddingY={2}>
+      <Stack as="ul" space={2}>
         {sites.map((site, index) => {
           return <SiteItem onDeploy={onDeploy} site={site} key={`site-${index}`} />
         })}
-      </ul>
-    )
-  }
+      </Stack>
+    </Box>
+  )
 }

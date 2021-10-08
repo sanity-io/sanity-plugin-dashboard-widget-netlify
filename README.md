@@ -57,10 +57,10 @@ To get dashboard support in Sanity Studio in general:
 `title` - Override the widget default title
 
 `sites[]` - Your Netlify sites to show deploys for
-  - `apiId`- The Netfliy API id of your site (see *Settings > General/Site Details >  Site Information Box*).
-  - `buildHookId` - The id of a build hook you have created for your site within the Netlify administration panel (see *Settings > Continous Deployment*).
-  - `title` - Override the site name with a custom title
+  - `apiId`- The Netfliy API ID of your site (see *Site Settings > General > Site Details >  Site Information -> API ID*).
+  - `buildHookId` - The id of a build hook you have created for your site within the Netlify administration panel (see *Site Settings > Build & Deploy > Continuous Deployment -> Build Hooks*).
   - `name` - The Netlify site name
+  - `title` - Override the site name with a custom title
   - `url` - Optionally override site deployment url. By default it is inferred to be `https://netlify-site-name-netlify.app`.
 
 ## Developing on this module
