@@ -34,7 +34,7 @@ export default function NetlifyWidget(props: Props) {
     <DashboardWidget header={title} footer={footer}>
       <ContentCard paddingY={1}>
         {description && (
-          <Box paddingY={2} paddingX={3}><Text as="p" dangerouslySetInnerHTML={{__html: description}} /></Box>
+          <Box paddingY={3} paddingX={3}><Text as="p" size={1} muted><span dangerouslySetInnerHTML={{__html: description}} /></Text></Box>
         )}
         <SiteList isLoading={isLoading} onDeploy={onDeploy} sites={sites} />
       </ContentCard>
