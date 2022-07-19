@@ -61,7 +61,7 @@ To get dashboard support in Sanity Studio in general:
   - `buildHookId` - The id of a build hook you have created for your site within the Netlify administration panel (see *Site Settings > Build & Deploy > Continuous Deployment -> Build Hooks*).
   - `name` - The Netlify site name
   - `title` - Override the site name with a custom title
-  - `url` - Optionally override site deployment url. By default it is inferred to be `https://netlify-site-name-netlify.app`.
+  - `url` - Optionally override site deployment url. By default it is inferred to be `https://netlify-site-name.netlify.app`.
 
 ## Developing on this module
 
