@@ -20,6 +20,7 @@ describe('SiteItem', () => {
   })
 
   const defaultSite: Site = {id: 'Id', title: 'Title', name: 'Name', buildHookId: 'BuildHookId'}
+  const siteWithBranch: Site = {id: 'Id', title: 'Title', name: 'Name', buildHookId: 'BuildHookId', branch: 'branch'}
 
   it('displays site title', () => {
     const {getByText} = render(<ThemeProvider scheme="light" theme={studioTheme}><SiteItem site={defaultSite} onDeploy={() => undefined} /></ThemeProvider>)
@@ -51,6 +52,13 @@ describe('SiteItem', () => {
       'src',
       `https://api.netlify.com/api/v1/badges/Id/deploy-status?${new Date().getTime()}`
     )
+  })
+
+  it('displays deploy badge for branch when branch name is used', () => {
+    const {getByAltText} = render(<ThemeProvider scheme="light" theme={studioTheme}><SiteItem site={siteWithBranch} onDeploy={() => undefined} /></ThemeProvider>)
+
+    const expectedSrc = `https://api.netlify.com/api/v1/badges/Id/deploy-status?${new Date().getTime()}&branch=branch`
+    expect(getByAltText('Badge')).toHaveAttribute('src', expectedSrc)
   })
 
   it('displays links to preview and site admin', () => {
