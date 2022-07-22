@@ -62,6 +62,7 @@ To get dashboard support in Sanity Studio in general:
   - `name` - The Netlify site name
   - `title` - Override the site name with a custom title
   - `url` - Optionally override site deployment url. By default it is inferred to be `https://netlify-site-name.netlify.app`.
+  - `branch` - Optionally pass the name of a branch to deploy
 
 ## Developing on this module
 
