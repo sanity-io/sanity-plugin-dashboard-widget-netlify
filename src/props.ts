@@ -21,8 +21,9 @@ export const props$ = (options: WidgetOptions) => {
     name: site.name,
     title: site.title,
     buildHookId: site.buildHookId,
-    url: site.url || (site.name && `https://${site.name}.netlify.app/`),
+    url: site.url || (site.branch && `https://${site.branch}--${site.name}.netlify.app/`) || (site.name && `https://${site.name}.netlify.app/`),
     adminUrl: site.name && `https://app.netlify.com/sites/${site.name}`,
+    branch: site.branch
   }))
 
   const [onDeploy$, onDeploy] = createEventHandler<Site>()

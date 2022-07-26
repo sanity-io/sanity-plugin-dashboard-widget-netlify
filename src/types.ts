@@ -4,6 +4,7 @@ export interface SiteWidgetOption {
   title: string
   buildHookId: string
   url?: string
+  branch?: string
 }
 export interface WidgetOptions {
   title?: string
@@ -18,6 +19,7 @@ export interface Site {
   url?: string
   adminUrl?: string
   buildHookId: string
+  branch?: string
 }
 
 export interface Props {

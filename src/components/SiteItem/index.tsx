@@ -10,16 +10,17 @@ interface Props {
 
 export const IMAGE_PULL_INTERVAL = 10000
 
-const getImageUrl = (siteId: string) => {
+const getImageUrl = (siteId: string, branchName?: string) => {
   const baseUrl = `https://api.netlify.com/api/v1/badges/${siteId}/deploy-status`
   const time = new Date().getTime()
+  const branch = `branch=${branchName}`
 
-  return `${baseUrl}?${time}`
+  return branchName ? `${baseUrl}?${time}&${branch}` : `${baseUrl}?${time}`
 }
 
-const useBadgeImage = (siteId: string) => {
-  const [src, setSrc] = useState(() => getImageUrl(siteId))
-  const update = useCallback(() => setSrc(getImageUrl(siteId)), [siteId])
+const useBadgeImage = (siteId: string, branchName?: string ) => {
+  const [src, setSrc] = useState(() => getImageUrl(siteId, branchName))
+  const update = useCallback(() => setSrc(getImageUrl(siteId, branchName)), [siteId])
 
   useEffect(() => {
     const interval = window.setInterval(update, IMAGE_PULL_INTERVAL)
@@ -42,9 +43,9 @@ const useDeploy = (site: Site, onDeploy: DeployAction, updateBadge: () => void) 
 const SiteItem: FunctionComponent<Props> = (props) => {
   const [hasBadgeError, setHasBadgeError] = useState(false)
   const {site, onDeploy} = props
-  const {id, name, title, url, adminUrl, buildHookId} = site
+  const {id, name, title, url, adminUrl, buildHookId, branch} = site
 
-  const [badge, updateBadge] = useBadgeImage(id)
+  const [badge, updateBadge] = useBadgeImage(id, branch)
   const handleDeploy = useDeploy(site, onDeploy, updateBadge)
   const handleBadgeError = () => {
     setHasBadgeError(true)
