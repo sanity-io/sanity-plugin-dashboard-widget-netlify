@@ -38,8 +38,9 @@
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
-    "prepublishOnly": "npm run build",
-    "prepare": "husky install"
+    "prepublishOnly": "npm run compile && npm run build",
+    "prepare": "husky install",
+    "compile": "tsc --noEmit"
   },
   "prettier": {
     "semi": false,
