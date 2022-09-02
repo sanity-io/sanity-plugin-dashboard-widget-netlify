@@ -87,3 +87,13 @@ To simulate using your development version as a real module inside a studio, you
   * Start the studio
 
 When you are done and have published your new version, you can run `npm unlink` inside this repo, and `npm unlink sanity-plugin-dashboard-widget-netlify` inside the mono-repo or studio to get back to the normal state. Then run `npm run bootstrap` for the mono-repo or `npm install` inside the regular studio to use the published version.
+
+## Developing plugin kit
+
+### Release new version
+
+Run ["CI & Release" workflow](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/actions/workflows/main.yml).
+Make sure to select the main (or v3) branch and check "Release new version".
+
+Semantic release will only release on configured branches, so it is safe to run release on any branch.
+
