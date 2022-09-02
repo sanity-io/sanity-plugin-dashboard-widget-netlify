@@ -1,6 +1,7 @@
 import {Observable} from 'rxjs'
 import {createAbortController} from './utils/createAbortController'
 
+// eslint-disable-next-line no-undef
 export const statusCodeRequest = (input: RequestInfo, init?: RequestInit): Observable<number> => {
   return new Observable((subscriber) => {
     const controller = createAbortController()
