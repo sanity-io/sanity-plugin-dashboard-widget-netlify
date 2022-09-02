@@ -11,6 +11,6 @@ export function netlifyWidget(config: NetlifyWidgetConfig): DashboardWidget {
     component: () => {
       return <Widget {...config} />
     },
-    layout: config.layout ?? {width: 'full'},
+    layout: config.layout ?? {width: 'medium'},
   }
 }

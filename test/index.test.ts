@@ -1,14 +1,16 @@
-import index from '../src/index'
-import Widget from '../src/widget'
+import {netlifyWidget} from '../src'
+const instance = netlifyWidget({
+  sites: [],
+})
 
 describe('index', () => {
   it('has a name', () => {
-    expect(index.name).toBe('netlify')
+    expect(instance.name).toBe('netlify-widget')
   })
   it('has a component', () => {
-    expect(index.component).toBe(Widget)
+    expect(instance.component).toBeTruthy()
   })
   it('has a layout', () => {
-    expect(index.layout).toEqual({width: 'medium'})
+    expect(instance.layout).toEqual({width: 'medium'})
   })
 })
