@@ -1,12 +1,8 @@
 {
-  "paths": {
-    "source": "./src",
-    "compiled": "./dist"
-  },
   "parts": [
     {
-      "implements": "part:@sanity/dashboard/widget",
-      "path": "index"
+      "implements": "part:@sanity/base/sanity-root",
+      "path": "./v2-incompatible.js"
     }
   ]
 }

@@ -2,19 +2,14 @@
   "root": true,
   "env": {
     "node": true,
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "extends": [
+    "sanity",
     "sanity/typescript",
-    "prettier"
-  ],
-  "plugins": [
-    "prettier"
-  ],
-  "parserOptions": {
-    "ecmaVersion": 2018
-  },
-  "rules": {
-    "no-undef": "off"
-  }
+    "sanity/react",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ]
 }

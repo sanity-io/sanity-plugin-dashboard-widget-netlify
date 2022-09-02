@@ -22,12 +22,12 @@ export interface Site {
   branch?: string
 }
 
-export interface Props {
+export type DeployAction = (site: Site) => void
+
+export interface NetlifyWidgetProps {
   title?: string
   description?: string
   sites?: Site[]
   isLoading: boolean
   onDeploy: DeployAction
 }
-
-export type DeployAction = (site: Site) => void

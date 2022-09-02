@@ -1,7 +1,7 @@
-import Widget from './widget'
+/**
+ * Plugin widget for @sanity/dashboard
+ */
+export {netlifyWidget} from './plugin'
+export type {NetlifyWidgetConfig} from './plugin'
 
-export default {
-  name: 'netlify',
-  component: Widget,
-  layout: {width: 'medium'},
-}
+export * from './types'
