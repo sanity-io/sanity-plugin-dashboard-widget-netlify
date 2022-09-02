@@ -28,14 +28,15 @@ Ensure that you have followed install and usage instructions for [@sanity/dashbo
 Add it as a widget to @sanity/dashboard plugin in sanity.config.ts (or .js):
 
 ```js
+import { dashboardTool } from "@sanity/dashboard";
+import { netlifyWidget } from "sanity-plugin-dashboard-widget-netlify";
+
 export default createConfig({
   // ...
   plugins: [
     dashboardTool({
       widgets: [
-        {
-          name: 'netlify',
-          options: {
+        netlifyWidget({
             title: 'My Netlify deploys',
             sites: [
               {
@@ -52,8 +53,7 @@ export default createConfig({
                 url: 'https://my-sanity-deployment.com',
               }
             ]
-          }
-        }
+        })
       ]
     })
   ]
