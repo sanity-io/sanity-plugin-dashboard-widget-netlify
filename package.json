@@ -69,7 +69,7 @@
     "rxjs": "^6.0.0"
   },
   "peerDependencies": {
-    "@sanity/dashboard": "^3.0.0-v3-studio.3",
+    "@sanity/dashboard": "^3.0.0-v3-studio.4",
     "@sanity/ui": "^0.38.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
