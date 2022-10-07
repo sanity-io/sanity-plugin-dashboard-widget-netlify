@@ -63,7 +63,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "@sanity/incompatible-plugin": "^1.0.3",
+    "@sanity/incompatible-plugin": "^1.0.4",
     "abort-controller": "^2.0.3",
     "react-props-stream": "^1.0.0",
     "rxjs": "^6.0.0"
@@ -83,12 +83,12 @@
     "@commitlint/config-conventional": "^17.1.0",
     "@parcel/packager-ts": "2.6.2",
     "@parcel/transformer-typescript-types": "2.6.2",
-    "@sanity/dashboard": "^3.0.0-v3-studio.1",
-    "@sanity/plugin-kit": "^1.0.1",
+    "@sanity/dashboard": "^3.0.0-v3-studio.4",
+    "@sanity/plugin-kit": "^1.0.2",
     "@sanity/semantic-release-preset": "^2.0.1",
     "@sanity/ui": "^0.38.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^12.1.5",
+    "@testing-library/react": "^13.4.0",
     "@types/jest": "^28.1.8",
     "@types/node": "^10.11.0",
     "@types/react": "^18.0.0",
