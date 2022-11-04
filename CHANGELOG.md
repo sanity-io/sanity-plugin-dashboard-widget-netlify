@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-v3-studio.6](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v2.0.0-v3-studio.5...v2.0.0-v3-studio.6) (2022-11-04)
+
+### Bug Fixes
+
+- **deps:** update dependencies (non-major) ([#41](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/issues/41)) ([8e1b4fc](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/8e1b4fcd2cc0ac925148a1351adc34821346c871))
+- use correct `peerDependencies` semver on prereleases ([7b81060](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/7b810606a547e5612bb33c09f957a7e5dc8c3142))
+
 ## [2.0.0-v3-studio.5](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v2.0.0-v3-studio.4...v2.0.0-v3-studio.5) (2022-11-03)
 
 ### Bug Fixes
