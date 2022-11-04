@@ -86,7 +86,7 @@
     "prettier": "^2.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "rimraf": "^2.6.2",
+    "rimraf": "^3.0.2",
     "sanipack": "^1.0.8",
     "styled-components": "^5.2.0",
     "ts-jest": "^26.0.0",
