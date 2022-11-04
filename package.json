@@ -50,8 +50,8 @@
   },
   "dependencies": {
     "abort-controller": "^2.0.3",
-    "react-props-stream": "^1.0.0",
-    "rxjs": "^6.0.0"
+    "react-props-stream": "^1.0.1",
+    "rxjs": "^6.6.7"
   },
   "peerDependencies": {
     "@sanity/base": ">=2.13.0",
