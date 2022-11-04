@@ -87,7 +87,7 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "rimraf": "^2.6.2",
-    "sanipack": "^1.0.8",
+    "sanipack": "^2.1.0",
     "styled-components": "^5.2.0",
     "ts-jest": "^26.0.0",
     "tsconfig-paths-jest": "0.0.1",
