@@ -49,7 +49,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "abort-controller": "^2.0.3",
+    "abort-controller": "^3.0.0",
     "react-props-stream": "^1.0.0",
     "rxjs": "^6.0.0"
   },
