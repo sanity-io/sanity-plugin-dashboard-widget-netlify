@@ -1,24 +1,20 @@
-> **NOTE**
->
-> This is the **Sanity Studio v3 version** of sanity-plugin-dashboard-widget-netlify.
->
-> For the v2 version, please refer to the [v2 version](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/tree/main).
-
-
 # Sanity Dashboard Widget: Netlify
+
+>This is a **Sanity Studio v3** plugin.
+> For the v2 version, please refer to the [v2-branch](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/tree/studio-v2).
 
 Sanity Studio Dashboard Widget for triggering Netlify builds.
 
 ## Install
 
 ```
-npm install --save sanity-plugin-dashboard-widget-netlify@studio-v3
+npm install --save sanity-plugin-dashboard-widget-netlify
 ```
 
 or
 
 ```
-yarn add sanity-plugin-dashboard-widget-netlify@studio-v3
+yarn add sanity-plugin-dashboard-widget-netlify
 ```
 
 Ensure that you have followed install and usage instructions for [@sanity/dashboard](https://github.com/sanity-io/dashboard).
