@@ -1,11 +1,13 @@
-import React, {FunctionComponent} from 'react'
+import React, {FunctionComponent, PropsWithChildren} from 'react'
 
-const Link: FunctionComponent<{url: string}> = (props) => {
+const Link = (props: PropsWithChildren<{url: string}>) => {
   const {url, children} = props
 
   return (
     <span>
-      <a href={url} target="_blank">{children}</a>
+      <a href={url} target="_blank" rel="noreferrer">
+        {children}
+      </a>
     </span>
   )
 }

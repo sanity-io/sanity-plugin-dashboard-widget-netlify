@@ -20,7 +20,16 @@ const props = {
 
 describe('NetlifyWidget', () => {
   it('NetlifyWidget can be mounted', () => {
-    const {getByText} = render(<ThemeProvider scheme="light" theme={studioTheme}><NetlifyWidget title={props.title} sites={props.sites} isLoading={props.isLoading} onDeploy={props.onDeploy} /></ThemeProvider>)
+    const {getByText} = render(
+      <ThemeProvider scheme="light" theme={studioTheme}>
+        <NetlifyWidget
+          title={props.title}
+          sites={props.sites}
+          isLoading={props.isLoading}
+          onDeploy={props.onDeploy}
+        />
+      </ThemeProvider>
+    )
 
     expect(getByText('Deployz')).toBeVisible()
   })

@@ -4,7 +4,7 @@ import {act, fireEvent, render} from '@testing-library/react'
 import {advanceBy, advanceTo, clear} from 'jest-date-mock'
 
 import SiteItem, {IMAGE_PULL_INTERVAL} from '../src/components/SiteItem'
-import {Site} from '../src/types'
+import {Site} from '../src'
 
 import '@testing-library/jest-dom'
 import {studioTheme, ThemeProvider} from '@sanity/ui'
@@ -20,10 +20,20 @@ describe('SiteItem', () => {
   })
 
   const defaultSite: Site = {id: 'Id', title: 'Title', name: 'Name', buildHookId: 'BuildHookId'}
-  const siteWithBranch: Site = {id: 'Id', title: 'Title', name: 'Name', buildHookId: 'BuildHookId', branch: 'branch'}
+  const siteWithBranch: Site = {
+    id: 'Id',
+    title: 'Title',
+    name: 'Name',
+    buildHookId: 'BuildHookId',
+    branch: 'branch',
+  }
 
   it('displays site title', () => {
-    const {getByText} = render(<ThemeProvider scheme="light" theme={studioTheme}><SiteItem site={defaultSite} onDeploy={() => undefined} /></ThemeProvider>)
+    const {getByText} = render(
+      <ThemeProvider scheme="light" theme={studioTheme}>
+        <SiteItem site={defaultSite} onDeploy={() => undefined} />
+      </ThemeProvider>
+    )
 
     expect(getByText('Title')).toBeVisible()
   })
@@ -31,7 +41,11 @@ describe('SiteItem', () => {
   it(`refreshes badge image every ${IMAGE_PULL_INTERVAL}ms`, () => {
     jest.useFakeTimers()
 
-    const {getByAltText} = render(<ThemeProvider scheme="light" theme={studioTheme}><SiteItem site={defaultSite} onDeploy={() => undefined} /></ThemeProvider>)
+    const {getByAltText} = render(
+      <ThemeProvider scheme="light" theme={studioTheme}>
+        <SiteItem site={defaultSite} onDeploy={() => undefined} />
+      </ThemeProvider>
+    )
 
     const expectedSrc = `https://api.netlify.com/api/v1/badges/Id/deploy-status?${new Date().getTime()}`
     expect(getByAltText('Badge')).toHaveAttribute('src', expectedSrc)
@@ -55,35 +69,51 @@ describe('SiteItem', () => {
   })
 
   it('displays deploy badge for branch when branch name is used', () => {
-    const {getByAltText} = render(<ThemeProvider scheme="light" theme={studioTheme}><SiteItem site={siteWithBranch} onDeploy={() => undefined} /></ThemeProvider>)
+    const {getByAltText} = render(
+      <ThemeProvider scheme="light" theme={studioTheme}>
+        <SiteItem site={siteWithBranch} onDeploy={() => undefined} />
+      </ThemeProvider>
+    )
 
     const expectedSrc = `https://api.netlify.com/api/v1/badges/Id/deploy-status?${new Date().getTime()}&branch=branch`
     expect(getByAltText('Badge')).toHaveAttribute('src', expectedSrc)
   })
 
   it('displays links to preview and site admin', () => {
-    const {queryByText, getByText, rerender} = render(<ThemeProvider scheme="light" theme={studioTheme}>
-      <SiteItem site={defaultSite} onDeploy={() => undefined} /></ThemeProvider>
+    const {queryByText, getByText, rerender} = render(
+      <ThemeProvider scheme="light" theme={studioTheme}>
+        <SiteItem site={defaultSite} onDeploy={() => undefined} />
+      </ThemeProvider>
     )
 
     expect(queryByText('view')).not.toBeInTheDocument()
     expect(queryByText('admin')).not.toBeInTheDocument()
 
-    rerender(<ThemeProvider scheme="light" theme={studioTheme}><SiteItem site={{...defaultSite, url: 'Url'}} onDeploy={() => undefined} /></ThemeProvider>)
+    rerender(
+      <ThemeProvider scheme="light" theme={studioTheme}>
+        <SiteItem site={{...defaultSite, url: 'Url'}} onDeploy={() => undefined} />
+      </ThemeProvider>
+    )
 
     expect(getByText('(view)')).toBeVisible()
     expect(getByText('(view)')).toHaveAttribute('href', 'Url')
 
-    rerender(<ThemeProvider scheme="light" theme={studioTheme}><SiteItem site={{...defaultSite, adminUrl: 'Url'}} onDeploy={() => undefined} /></ThemeProvider>)
+    rerender(
+      <ThemeProvider scheme="light" theme={studioTheme}>
+        <SiteItem site={{...defaultSite, adminUrl: 'Url'}} onDeploy={() => undefined} />
+      </ThemeProvider>
+    )
 
     expect(getByText('(admin)')).toBeVisible()
     expect(getByText('(admin)')).toHaveAttribute('href', 'Url')
 
-    rerender(<ThemeProvider scheme="light" theme={studioTheme}>
-      <SiteItem
-        site={{...defaultSite, adminUrl: 'AdminUrl', url: 'Url'}}
-        onDeploy={() => undefined}
-      /></ThemeProvider>
+    rerender(
+      <ThemeProvider scheme="light" theme={studioTheme}>
+        <SiteItem
+          site={{...defaultSite, adminUrl: 'AdminUrl', url: 'Url'}}
+          onDeploy={() => undefined}
+        />
+      </ThemeProvider>
     )
 
     expect(getByText((_, node) => node?.textContent === '(view, admin)')).toBeVisible()
@@ -96,7 +126,11 @@ describe('SiteItem', () => {
     jest.useFakeTimers()
     const onDeploy = jest.fn()
 
-    const {getByText, getByAltText} = render(<ThemeProvider scheme="light" theme={studioTheme}><SiteItem site={defaultSite} onDeploy={onDeploy} /></ThemeProvider>)
+    const {getByText, getByAltText} = render(
+      <ThemeProvider scheme="light" theme={studioTheme}>
+        <SiteItem site={defaultSite} onDeploy={onDeploy} />
+      </ThemeProvider>
+    )
 
     expect(onDeploy).toHaveBeenCalledTimes(0)
 

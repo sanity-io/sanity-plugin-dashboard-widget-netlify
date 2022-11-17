@@ -1,7 +1,7 @@
 import React from 'react'
-import {Props} from '../types'
+import {NetlifyWidgetProps} from '../types'
 import SiteList from './SiteList'
-import {DashboardWidget} from '@sanity/dashboard'
+import {DashboardWidgetContainer} from '@sanity/dashboard'
 import styled from 'styled-components'
 import {Button, Flex, Card, Text, Box} from '@sanity/ui'
 
@@ -9,7 +9,7 @@ const ContentCard = styled(Card)`
   min-height: 66px;
 `
 
-export default function NetlifyWidget(props: Props) {
+export default function NetlifyWidget(props: NetlifyWidgetProps) {
   const netlifySitesUrl = 'https://app.netlify.com/account/sites'
   const {title, description, isLoading, sites, onDeploy} = props
 
@@ -31,13 +31,17 @@ export default function NetlifyWidget(props: Props) {
   )
 
   return (
-    <DashboardWidget header={title} footer={footer}>
+    <DashboardWidgetContainer header={title} footer={footer}>
       <ContentCard paddingY={1}>
         {description && (
-          <Box paddingY={3} paddingX={3}><Text as="p" size={1} muted><span dangerouslySetInnerHTML={{__html: description}} /></Text></Box>
+          <Box paddingY={3} paddingX={3}>
+            <Text as="p" size={1} muted>
+              <span dangerouslySetInnerHTML={{__html: description}} />
+            </Text>
+          </Box>
         )}
         <SiteList isLoading={isLoading} onDeploy={onDeploy} sites={sites} />
       </ContentCard>
-    </DashboardWidget>
+    </DashboardWidgetContainer>
   )
 }

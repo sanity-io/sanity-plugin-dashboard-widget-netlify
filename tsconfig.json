@@ -1,42 +1,24 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "preserve",
     "moduleResolution": "node",
-    "target": "es5",
+    "target": "esnext",
+    "module": "esnext",
     "esModuleInterop": true,
-    "module": "es2015",
-    "lib": ["es2015", "es2016", "es2017", "dom"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "strict": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
+    "sourceMap": false,
+    "inlineSourceMap": false,
+    "downlevelIteration": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "declarationDir": "dist/types",
-    "outDir": "dist/lib",
-    "typeRoots": ["node_modules/@types"],
-    "baseUrl": ".",
-    "paths": {
-      "part:@sanity/dashboard/widget-container": [
-        "test/__mocks__/WidgetContainer.tsx"
-      ],
-      "all:part:@sanity/dashboard/widget": [
-        "test/__mocks__/undefinedObjectMock.tsx"
-      ],
-      "part:@sanity/components/previews/default": [
-        "test/__mocks__/undefinedObjectMock.tsx"
-      ],
-      "part:@sanity/base/user": [
-        "test/__mocks__/undefinedObjectMock.tsx"
-      ],
-      "part:@sanity/base/client": [
-        "test/__mocks__/undefinedObjectMock.tsx"
-      ],
-      "part:@sanity/dashboard/config": [
-        "test/__mocks__/undefinedObjectMock.tsx"
-      ]
-    }
+    "outDir": "lib",
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "checkJs": false,
+    "rootDir": "src"
   },
   "include": ["src/**/*"]
 }
