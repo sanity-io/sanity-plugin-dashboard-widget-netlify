@@ -5,6 +5,28 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v1.3.1...v2.0.0) (2022-11-17)
+
+### ⚠ BREAKING CHANGES
+
+- this version does not work in Sanity Studio v2
+- initial V3 version
+
+### Features
+
+- initial Sanity Studio v3 release ([5f515bb](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/5f515bbb29beda3bef75ab599fcc73a51d0d447b))
+- initial V3 version ([9b6dd57](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/9b6dd57bafecc4e0fae2cfeb6ec2f042b21226d8))
+
+### Bug Fixes
+
+- compiled for sanity 3.0.0-rc.0 ([5cdbed7](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/5cdbed7784fbbc40baf535aa06dbe10d08755838))
+- **deps:** dev-preview.21 ([13bcbd5](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/13bcbd5f5580704fb6fd1efb9e492bc518c86c53))
+- **deps:** dev-preview.22 ([91ba4ea](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/91ba4eaf77c537b715d1e52ed1d17d1f3322c546))
+- **deps:** pkg-utils & @sanity/plugin-kit ([5395a97](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/5395a975aa527079110525d85484c86159bc2cd4))
+- **deps:** sanity 3.0.0-dev-preview.17 and sanity/ui 0.38 ([eb19284](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/eb192845f14ba8b8953e154596422cca0c8a3c4c))
+- **deps:** update dependencies (non-major) ([#41](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/issues/41)) ([8e1b4fc](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/8e1b4fcd2cc0ac925148a1351adc34821346c871))
+- use correct `peerDependencies` semver on prereleases ([7b81060](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/7b810606a547e5612bb33c09f957a7e5dc8c3142))
+
 ## [2.0.0-v3-studio.7](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v2.0.0-v3-studio.6...v2.0.0-v3-studio.7) (2022-11-04)
 
 ### Bug Fixes
