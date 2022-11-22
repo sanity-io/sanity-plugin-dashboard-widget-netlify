@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v1.3.1...v1.3.2) (2022-11-22)
+
+### Bug Fixes
+
+- **ci:** publish using semantic-release ([c034ea0](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/c034ea0779dfd202e102895d53e23843dedd235f))
+
 ## [1.3.1](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v1.3.0...v1.3.1) (2022-09-02)
 
 ### Bug Fixes
