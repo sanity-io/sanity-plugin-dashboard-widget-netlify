@@ -1,6 +1,6 @@
 # Sanity Dashboard Widget: Netlify
 
->This is a **Sanity Studio v2** plugin.
+> This is a **Sanity Studio v2** plugin.
 > For the v3 version, please refer to the [v3-branch](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify).
 
 Sanity Studio Dashboard Widget for triggering Netlify builds.
@@ -10,11 +10,30 @@ Sanity Studio Dashboard Widget for triggering Netlify builds.
 ### Install the dashboard plugin
 To get dashboard support in Sanity Studio in general:
 
-`sanity install @sanity/dashboard`
+```sh
+yarn add @sanity/dashboard@studio-v2
+```
+
+Next, add `"@sanity/dashboard"` to `sanity.json` plugins array:
+```json
+"plugins": [
+  "@sanity/dashboard"
+]
+```
 
 ### Install the Netlify widget plugin
 
-`sanity install dashboard-widget-netlify`
+```sh
+yarn add sanity-plugin-dashboard-widget-netlify@studio-v2
+```
+
+Next, add `"dashboard-widget-netlify"` to `sanity.json` plugins array:
+```json
+"plugins": [
+  "@sanity/dashboard",
+  "dashboard-widget-netlify"
+]
+```
 
 ## Configuring
 
