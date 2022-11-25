@@ -62,7 +62,7 @@
   },
   "dependencies": {
     "@sanity/incompatible-plugin": "^1.0.4",
-    "@sanity/ui": "^1.0.0",
+    "@sanity/ui": "1.0.0",
     "abort-controller": "^2.0.3",
     "react-props-stream": "^1.0.1",
     "rxjs": "^6.6.7"
