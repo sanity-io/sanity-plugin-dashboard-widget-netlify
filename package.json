@@ -65,7 +65,7 @@
     "@sanity/ui": "^1.0.0",
     "abort-controller": "^2.0.3",
     "react-props-stream": "^1.0.1",
-    "rxjs": "^6.6.7"
+    "rxjs": "^7.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.19.4",
