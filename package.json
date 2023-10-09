@@ -73,7 +73,7 @@
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@sanity/dashboard": "^3.0.0",
-    "@sanity/pkg-utils": "^1.17.2",
+    "@sanity/pkg-utils": "^2.4.10",
     "@sanity/plugin-kit": "^2.1.5",
     "@sanity/semantic-release-preset": "^2.0.2",
     "@testing-library/jest-dom": "^5.16.5",
