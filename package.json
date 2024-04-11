@@ -77,7 +77,7 @@
     "@sanity/plugin-kit": "^2.1.5",
     "@sanity/semantic-release-preset": "^2.0.2",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^14.3.1",
     "@types/jest": "^29.2.1",
     "@types/node": "^18.11.9",
     "@types/react": "^18",
