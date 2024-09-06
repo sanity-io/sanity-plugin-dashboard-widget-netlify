@@ -101,8 +101,8 @@
     "react": "^18",
     "react-dom": "^18",
     "rimraf": "^3.0.2",
-    "sanity": "^3.0.0",
-    "styled-components": "^5.3.6",
+    "sanity": "^3.35.0",
+    "styled-components": "^6.1.0",
     "ts-jest": "^29.0.3",
     "typescript": "^4.8.4"
   },
