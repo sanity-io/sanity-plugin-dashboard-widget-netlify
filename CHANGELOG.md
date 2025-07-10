@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v2.0.1...v2.0.2) (2025-07-10)
+
+### Bug Fixes
+
+- **deps:** allow studio v4 peer dep ranges ([c27d307](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/c27d3070aa798b6b9ae491cdc878d5cf59618b2d))
+- **deps:** update peer dependencies to include styled components v6 and @sanity/dashboard v4 ([#87](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/issues/87)) ([b83e1af](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/b83e1afd8f0e536eb847a2daa363ef45e0e995d9))
+
 ## [2.0.1](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v2.0.0...v2.0.1) (2022-11-25)
 
 ### Bug Fixes
