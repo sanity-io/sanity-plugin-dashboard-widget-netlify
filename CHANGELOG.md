@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v2.0.3...v2.0.4) (2026-01-07)
+
+### Bug Fixes
+
+- allow `@sanity/dashboard` v5 ([1b10f49](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/commit/1b10f49970b73a7eb26cb978c9a5a2967ea86dce))
+
 ## [2.0.3](https://github.com/sanity-io/sanity-plugin-dashboard-widget-netlify/compare/v2.0.2...v2.0.3) (2025-12-29)
 
 ### Bug Fixes
